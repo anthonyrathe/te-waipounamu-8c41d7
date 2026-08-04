@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te Waipounamu — South Island Grand Loop · Justine & Anthony · Nov 2026</title>
+<meta name="description" content="17 days, one campervan, the whole South Island. Interactive itinerary, real camps & lodges, live booking links.">
+<!-- Private trip page: keep it out of search engines. This meta tag is what actually
+     works for a GitHub project page — a robots.txt under /<repo>/ is NOT honoured,
+     crawlers only read it at the domain root. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛺</text></svg>">
+</head>
+<body>
+
+<!-- scroll progress -->
+<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- nav -->
+<nav class="nav" id="nav">
+  <a class="nav-brand" href="#top">Te <em>Waipounamu</em></a>
+  <div class="nav-links">
+    <a href="#route">The Loop</a>
+    <a href="#days">Day by Day</a>
+    <a href="#camps">Wild Nights</a>
+    <a href="#finder">Stay Finder</a>
+    <a href="#book">Book It</a>
+    <a href="#budget">Budget</a>
+  </div>
+  <div class="nav-count mono" id="navCount"></div>
+</nav>
+
+<!-- ====================== HERO ====================== -->
+<header class="hero" id="top">
+  <div class="hero-img" id="heroImg"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <p class="hero-kicker mono reveal">5 — 21 November 2026 · Justine &amp; Anthony · one campervan</p>
+    <h1 class="hero-title">
+      <span class="reveal d1">Te</span>
+      <span class="reveal d2"><em>Waipounamu</em></span>
+    </h1>
+    <p class="hero-sub reveal d3">The South Island, end to end. Seventeen days. Nine nights camped on lakeshores
+      and inside national parks, seven in boutique lodges — whales, glaciers, fiords,
+      and a free camp on Lake Pukaki the night before a new moon.</p>
+    <div class="hero-stats reveal d4" id="heroStats"></div>
+  </div>
+  <div class="hero-scroll mono">scroll<span class="hero-scroll-line"></span></div>
+  <p class="hero-credit mono">Piopiotahi / Milford Sound</p>
+</header>
+
+<main>
+
+<!-- ====================== THE LOOP ====================== -->
+<section class="section section-paper" id="route">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker mono">01 — the route</p>
+      <h2 class="sec-title">One grand <em>loop</em></h2>
+      <p class="sec-lede">Christchurch to Christchurch, <em>clockwise</em> — and the direction is the whole trick. The new moon
+      falls on 9 November, so the loop runs to the Mackenzie first: Mt John on the 6th, the free camp on Lake Pukaki
+      on the 8th, both inside the darkest window of the trip. From there over Lindis Pass to Queenstown, deep into
+      Fiordland, north through the lakes and Haast to glacier country, up the wild West Coast, over Lewis Pass,
+      and home along the whale coast. No backtracking that doesn't earn its keep.</p>
+    </div>
+    <div class="route-strip mono" id="routeStrip"></div>
+    <div class="map-shell">
+      <div id="map"></div>
+      <div class="map-legend mono" id="mapLegend"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== DAY BY DAY ====================== -->
+<section class="section section-ink" id="days">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker mono">02 — the journal</p>
+      <h2 class="sec-title">Seventeen <em>days</em></h2>
+      <p class="sec-lede">Every day shows the drive, the plan, what it costs and where you sleep —
+      <span class="key-camp">teal nights are camps</span>, <span class="key-lodge">amber nights are lodges</span>.
+      Tap any photo for the gallery; every price links to the live booking page.</p>
+    </div>
+  </div>
+  <div class="days" id="daysRoot"></div>
+</section>
+
+<!-- ====================== WILD NIGHTS ====================== -->
+<section class="section section-paper" id="camps">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker mono">03 — wild nights</p>
+      <h2 class="sec-title">Nine nights <em>under the stars</em></h2>
+      <p class="sec-lede" id="campsLede"></p>
+    </div>
+    <div class="camp-grid" id="campGrid"></div>
+    <div class="camp-rules" id="campRules"></div>
+  </div>
+</section>
+
+<!-- ====================== STAY FINDER ====================== -->
+<section class="section section-ink" id="finder">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker mono">04 — look it up yourself</p>
+      <h2 class="sec-title">Stay <em>finder</em></h2>
+      <p class="sec-lede">Don't take our word for it — pick any stop and the dates are pre-filled from the
+      itinerary (editable). One tap opens the live search on Booking.com or Airbnb (2 adults, EUR),
+      CamperMate for campsites, or the DOC booking portal.</p>
+    </div>
+    <div class="finder" id="finderRoot"></div>
+  </div>
+</section>
+
+<!-- ====================== BOOK IT ====================== -->
+<section class="section section-paper" id="book">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker mono">05 — make it real</p>
+      <h2 class="sec-title">Book it, <em>in order</em></h2>
+      <p class="sec-lede">Everything bookable on this trip — flights, the van, every lodge, camp and
+      activity — with prices, links and alternatives, sorted by how fast each one sells out.</p>
+    </div>
+    <div class="book-flights" id="bookFlights"></div>
+    <div class="book-camper" id="bookCamper"></div>
+    <div class="checklist" id="checklistRoot"></div>
+  </div>
+</section>
+
+<!-- ====================== BUDGET ====================== -->
+<section class="section section-ink" id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker mono">06 — the damage</p>
+      <h2 class="sec-title">The <em>budget</em></h2>
+      <p class="sec-lede" id="budgetNote"></p>
+    </div>
+    <div class="budget" id="budgetRoot"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-title">Te <em>Waipounamu</em></p>
+      <p class="mono footer-meta">South Island grand loop, clockwise · 5–21 Nov 2026<br>2,730 km · 9 camp nights · 7 lodge nights</p>
+    </div>
+    <div class="footer-notes" id="footerNotes"></div>
+  </div>
+  <p class="footer-fine mono">Lodge prices: Booking.com checks &amp; aggregator rates, June 2026 · camp fees: DOC &amp; park websites ·
+  operating status, seasons &amp; booking windows re-confirmed against the November dates 3 Aug 2026 ·
+  1 NZD ≈ €0.50 · November = late alpine spring: pack four seasons a day · scenery photos: Wikimedia Commons · ⛺ made with love</p>
+</footer>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-x mono" id="lightboxX">close ✕</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="previous">‹</button>
+  <img id="lightboxImg" alt="">
+  <button class="lightbox-next" id="lightboxNext" aria-label="next">›</button>
+  <p class="lightbox-cap mono" id="lightboxCap"></p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/images.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
