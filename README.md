@@ -9,7 +9,29 @@ The loop runs clockwise on purpose: the new moon falls on **9 Nov 2026**, so goi
 Banks Peninsula → Mackenzie first puts the Mt John Dark Sky tour on the 6th and the
 free Lake Pukaki camp on the 8th — the darkest nights of the trip.
 
-## Open it
+## Live site
+
+**https://anthonyrathe.github.io/te-waipounamu-8c41d7/**
+
+Hosted free on GitHub Pages from this folder (`webapp/` is its own git repo, pushed to
+`anthonyrathe/te-waipounamu-8c41d7`, Pages serving `main` at root).
+
+> ⚠ The repo is **public** — GitHub Pages needs a paid plan to serve from a private repo.
+> The page carries `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`
+> so it stays out of search results, and the URL has a random suffix, but anyone with the
+> link can read it. It names both travellers and lists the exact dates you're away from home.
+> `robots.txt` is included but is **not** what protects it — crawlers only honour robots.txt at
+> a domain root, never under `/<repo>/`. The meta tag is the mechanism that works here.
+
+### Redeploy after editing
+
+```bash
+cd webapp
+git add -A && git commit -m "update itinerary" && git push
+# Pages rebuilds in ~1 minute
+```
+
+## Open it locally
 
 Easiest: double-click `index.html`.
 
