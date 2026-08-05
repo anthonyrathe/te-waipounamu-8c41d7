@@ -377,8 +377,9 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
     { t: "November weather", b: "Late alpine spring: 8–20 °C, ~15 hours of daylight, sunset near 20:45. Snow still possible on the passes; waterfalls still fat with snowmelt. Sandflies are awake in Fiordland — bring repellent." },
     { t: "Driving", b: "Left side, ~80 km/h average in a van. Fuel up before Haast and the Milford Road — no stations for 120 km+." },
     { t: "The green warrant", b: "Blue self-containment cards died 7 June 2026. Confirm in writing the rental carries the green warrant, or the free nights are illegal." },
-    { t: "Booking cadence", b: "Flights & van now · Onsen now (released to 31 Dec) · DOC White Horse Hill, Moke Lk & Otto's now · Cascade Creek releases during Aug 2026 — check the portal." },
+    { t: "Booking cadence", b: "Flights DONE (China Southern, €2,323 for two) · airport hotel for the 4 Nov landing night + van now · Onsen now (released to 31 Dec) · DOC White Horse Hill, Moke Lk & Otto's now · Cascade Creek releases during Aug 2026 — check the portal." },
     { t: "Dates that matter", b: "New moon 9 Nov — the loop runs clockwise to put Mt John and the Pukaki free camp on the 6th and 8th. Roy's Peak reopens 11 Nov after lambing. Canterbury Show Week peaks Fri 13 Nov, while you're safely in Otago." },
+    { t: "The two depot deadlines", b: "The camper depot runs 08:00–16:30, last airport shuttle 16:00. That is why the 17:20 arrival on 4 Nov becomes a hotel night, and why the van must be back by 16:30 on 21 Nov even though the flight is not until 22:30. Both edges are hard." },
   ].map((n) => `<div class="fnote"><div class="fn-t">${esc(n.t)}</div><div class="fn-b">${esc(n.b)}</div></div>`).join("");
 })();
 

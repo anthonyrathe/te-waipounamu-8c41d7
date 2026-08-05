@@ -1,40 +1,62 @@
 /* ============================================================
    TE WAIPOUNAMU — South Island Grand Loop · data
-   Justine & Anthony · 5–21 Nov 2026 · Christchurch round trip
-   Campervan · 9 camp nights / 7 lodge nights
+   Justine & Anthony · 4–21 Nov 2026 · Christchurch round trip
+   Campervan · 9 camp nights / 8 lodge nights
    Money: EUR, 1 NZD ≈ €0.50 · lodging = per night FOR TWO
    Sources: Booking.com live checks (Jun 2026), DOC & operator
    websites (researched 12 Jun 2026; re-verified 19 Jul 2026;
-   re-dated & re-confirmed for the November flights 3 Aug 2026)
+   re-dated for the November flights 3 Aug 2026; re-dated again
+   for the BOOKED China Southern flights 5 Aug 2026)
 
    v3 — CLOCKWISE. The loop was reversed when the dates moved to
    November: new moon falls on 9 Nov, so running Banks Peninsula
    → Mackenzie first puts the Dark Sky tour and the free Pukaki
    camp on 6 and 8 Nov, in the darkest window of the trip.
+
+   v4 — the flights are BOOKED (China Southern, €2,323 for two).
+   They land 4 Nov 17:20 and leave 21 Nov 22:30, which buys one
+   extra night at the front and a whole extra day at the back.
+   The loop itself is UNTOUCHED: CZ617 lands after the campervan
+   depot closes (16:30), so night 1 is an airport hotel and the
+   van is collected on the morning of 5 Nov — meaning every
+   moon-, lambing- and whale-dated day below keeps its date.
    ============================================================ */
 
 const TRIP = {
   title: "Te Waipounamu",
   subtitle: "The South Island, end to end",
-  arrive: "Thu 5 Nov 2026 · Christchurch",
-  depart: "Sat 21 Nov 2026 · Christchurch",
+  arrive: "Wed 4 Nov 2026 · 17:20 Christchurch",
+  depart: "Sat 21 Nov 2026 · 22:30 Christchurch",
   travellers: "Justine & Anthony",
-  nights: 16,
+  nights: 17,
   stats: [
     { value: "2,730", unit: "km", label: "one grand loop, clockwise" },
     { value: "9", unit: "nights", label: "camped wild & lakeside" },
-    { value: "7", unit: "nights", label: "boutique lodges" },
+    { value: "8", unit: "nights", label: "lodges, incl. the landing night" },
     { value: "5", unit: "parks", label: "national parks crossed" },
   ],
 };
 
-/* ---------- the 16 nights ----------
+/* ---------- the 17 nights ----------
    type "camp" | "lodge" · stay.free = legal freedom camping
    price = € per night for two · DOC fees = per-adult × 2 */
 
 const NIGHTS = [
   {
-    n: 1, date: "Thu 5 Nov", place: "Akaroa", region: "Banks Peninsula",
+    n: 1, date: "Wed 4 Nov", place: "Christchurch Airport", region: "Ōtautahi · the landing night",
+    coords: [-43.4876, 172.5374], type: "lodge",
+    checkin: "2026-11-04", checkout: "2026-11-05", searchTown: "Christchurch Airport",
+    stay: { name: "Sudima Christchurch Airport", price: 140, imgKey: "christchurch2",
+            note: "This night exists because of the booked flight, not because anyone wanted it: CZ617 touches down at 17:20 and the Britz/Maui depot closes at 16:30 (last airport shuttle 16:00), so the van simply cannot be collected today. Sudima is directly across the forecourt from the terminal — a two-minute walk with the trolleys after 32 hours in the air. Sleep, then take the van at 08:00 with a whole clear day ahead. Rate is an indication, not a live check.",
+            url: "https://www.sudimahotels.com/hotels/new-zealand/christchurch-airport/" },
+    alts: [
+      { name: "Novotel Christchurch Airport", kind: "lodge", price: 155, note: "the other walk-across-the-road option, right at the terminal", url: "https://all.accor.com/hotel/8060/index.en.shtml" },
+      { name: "Airport Gateway Motor Lodge", kind: "lodge", price: 100, note: "free shuttle, 5 minutes out — the same idea for a third less", url: "https://www.airportgateway.co.nz/" },
+      { name: "Orari Boutique Hotel, in town", kind: "lodge", price: 115, note: "if you'd rather have a real first dinner in the city — 20 min in, and a taxi back out to the depot at 08:00", url: "https://www.orari.co.nz/" },
+    ],
+  },
+  {
+    n: 2, date: "Thu 5 Nov", place: "Akaroa", region: "Banks Peninsula",
     coords: [-43.8035, 172.9683], type: "lodge",
     checkin: "2026-11-05", checkout: "2026-11-06", searchTown: "Akaroa",
     stay: { name: "French Bay House", score: 9.7, price: 175, imgKey: "french_bay",
@@ -47,7 +69,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 2, date: "Fri 6 Nov", place: "Lake Tekapo", region: "Mackenzie Basin · Dark Sky Reserve",
+    n: 3, date: "Fri 6 Nov", place: "Lake Tekapo", region: "Mackenzie Basin · Dark Sky Reserve",
     coords: [-44.0046, 170.4771], type: "camp",
     checkin: "2026-11-06", checkout: "2026-11-07", searchTown: "Lake Tekapo",
     stay: { name: "Lakes Edge Holiday Park, Tekapo", price: 30, imgKey: "tekapo",
@@ -60,7 +82,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 3, date: "Sat 7 Nov", place: "White Horse Hill", region: "Aoraki / Mt Cook NP",
+    n: 4, date: "Sat 7 Nov", place: "White Horse Hill", region: "Aoraki / Mt Cook NP",
     coords: [-43.7180, 170.0920], type: "camp",
     checkin: "2026-11-07", checkout: "2026-11-08", searchTown: "Mount Cook Village",
     stay: { name: "White Horse Hill DOC campground", price: 20, imgKey: "camp_whitehorse", doc: true,
@@ -72,7 +94,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 4, date: "Sun 8 Nov", place: "Lake Pukaki", region: "Mackenzie Basin · Dark Sky Reserve",
+    n: 5, date: "Sun 8 Nov", place: "Lake Pukaki", region: "Mackenzie Basin · Dark Sky Reserve",
     coords: [-44.1700, 170.1200], type: "camp",
     checkin: "2026-11-08", checkout: "2026-11-09", searchTown: "Lake Tekapo",
     stay: { name: "Lake Pukaki Overflow — “The Pines”", price: 0, free: true, imgKey: "camp_pukaki",
@@ -84,7 +106,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 5, date: "Mon 9 Nov", place: "Queenstown", region: "Lake Wakatipu",
+    n: 6, date: "Mon 9 Nov", place: "Queenstown", region: "Lake Wakatipu",
     coords: [-45.0312, 168.6626], type: "lodge",
     checkin: "2026-11-09", checkout: "2026-11-10", searchTown: "Queenstown",
     stay: { name: "Moonlight Escape Lodge", score: 9.8, price: 200, imgKey: "moonlight_escape",
@@ -97,7 +119,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 6, date: "Tue 10 Nov", place: "Te Anau", region: "Fiordland gateway",
+    n: 7, date: "Tue 10 Nov", place: "Te Anau", region: "Fiordland gateway",
     coords: [-45.4145, 167.7180], type: "lodge",
     checkin: "2026-11-10", checkout: "2026-11-11", searchTown: "Te Anau",
     stay: { name: "Blue Thistle Cottages", score: 9.6, price: 150, imgKey: "blue_thistle",
@@ -109,7 +131,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 7, date: "Wed 11 Nov", place: "Cascade Creek", region: "Eglinton Valley · Fiordland NP",
+    n: 8, date: "Wed 11 Nov", place: "Cascade Creek", region: "Eglinton Valley · Fiordland NP",
     coords: [-44.8900, 168.0600], type: "camp",
     checkin: "2026-11-11", checkout: "2026-11-12", searchTown: "Te Anau",
     stay: { name: "Cascade Creek DOC campsite", price: 18, imgKey: "camp_cascade", doc: true,
@@ -122,7 +144,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 8, date: "Thu 12 Nov", place: "Moke Lake", region: "Queenstown backcountry",
+    n: 9, date: "Thu 12 Nov", place: "Moke Lake", region: "Queenstown backcountry",
     coords: [-45.0044, 168.5550], type: "camp",
     checkin: "2026-11-12", checkout: "2026-11-13", searchTown: "Queenstown",
     stay: { name: "Moke Lake DOC campsite", price: 18, imgKey: "camp_moke", doc: true,
@@ -134,7 +156,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 9, date: "Fri 13 Nov", place: "Wanaka", region: "Otago lakes",
+    n: 10, date: "Fri 13 Nov", place: "Wanaka", region: "Otago lakes",
     coords: [-44.7032, 169.1321], type: "lodge",
     checkin: "2026-11-13", checkout: "2026-11-14", searchTown: "Wanaka",
     stay: { name: "Black Diamond Retreat — Private Spa", score: 10, price: 136, imgKey: "black_diamond",
@@ -146,7 +168,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 10, date: "Sat 14 Nov", place: "Glendhu Bay", region: "Lake Wanaka shore",
+    n: 11, date: "Sat 14 Nov", place: "Glendhu Bay", region: "Lake Wanaka shore",
     coords: [-44.6680, 168.9990], type: "camp",
     checkin: "2026-11-14", checkout: "2026-11-15", searchTown: "Wanaka",
     stay: { name: "Glendhu Bay Lakeside Holiday Park", price: 35, imgKey: "camp_glendhu",
@@ -158,7 +180,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 11, date: "Sun 15 Nov", place: "Franz Josef / Waiau", region: "Glacier country",
+    n: 12, date: "Sun 15 Nov", place: "Franz Josef / Waiau", region: "Glacier country",
     coords: [-43.3870, 170.1833], type: "lodge",
     checkin: "2026-11-15", checkout: "2026-11-16", searchTown: "Franz Josef",
     stay: { name: "Rainforest Retreat — Deluxe Tree Hut", score: 9.0, price: 175, imgKey: "rainforest_treehut",
@@ -170,7 +192,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 12, date: "Mon 16 Nov", place: "Lake Mapourika", region: "Westland Tai Poutini NP",
+    n: 13, date: "Mon 16 Nov", place: "Lake Mapourika", region: "Westland Tai Poutini NP",
     coords: [-43.3128, 170.2020], type: "camp",
     checkin: "2026-11-16", checkout: "2026-11-17", searchTown: "Franz Josef",
     stay: { name: "Otto's / MacDonalds DOC campsite", price: 18, imgKey: "camp_mapourika", doc: true,
@@ -181,7 +203,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 13, date: "Tue 17 Nov", place: "Punakaiki", region: "Paparoa National Park",
+    n: 14, date: "Tue 17 Nov", place: "Punakaiki", region: "Paparoa National Park",
     coords: [-42.1089, 171.3372], type: "camp",
     checkin: "2026-11-17", checkout: "2026-11-18", searchTown: "Punakaiki",
     stay: { name: "Punakaiki Beach Camp", price: 26, imgKey: "camp_punakaiki",
@@ -193,7 +215,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 14, date: "Wed 18 Nov", place: "Hanmer Springs", region: "Alpine spa village",
+    n: 15, date: "Wed 18 Nov", place: "Hanmer Springs", region: "Alpine spa village",
     coords: [-42.5215, 172.8278], type: "camp",
     checkin: "2026-11-18", checkout: "2026-11-19", searchTown: "Hanmer Springs",
     stay: { name: "Hanmer Springs TOP 10 Holiday Park", price: 35, imgKey: "camp_hanmer",
@@ -205,7 +227,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 15, date: "Thu 19 Nov", place: "Kaikōura", region: "Whale coast",
+    n: 16, date: "Thu 19 Nov", place: "Kaikōura", region: "Whale coast",
     coords: [-42.4008, 173.6814], type: "lodge",
     checkin: "2026-11-19", checkout: "2026-11-20", searchTown: "Kaikoura",
     stay: { name: "Deerbrooke Kaikōura Chalets", score: 9.8, price: 194, imgKey: "deerbrooke",
@@ -218,7 +240,7 @@ const NIGHTS = [
     ],
   },
   {
-    n: 16, date: "Fri 20 Nov", place: "Christchurch", region: "Ōtautahi",
+    n: 17, date: "Fri 20 Nov", place: "Christchurch", region: "Ōtautahi",
     coords: [-43.5321, 172.6362], type: "lodge",
     checkin: "2026-11-20", checkout: "2026-11-21", searchTown: "Christchurch",
     stay: { name: "The Observatory Hotel", score: 9.1, price: 175, imgKey: "observatory",
@@ -234,18 +256,28 @@ const NIGHTS = [
 /* ---------- the 17 days ---------- */
 const DAYS = [
   {
-    n: 1, date: "Thu 5 Nov", title: "Touchdown → the French harbour", nightN: 1,
+    n: 1, date: "Wed 4 Nov", title: "Thirty-two hours, then the ground", nightN: 1,
+    imgKey: "christchurch2", gallery: ["christchurch2", "christchurch"],
+    body: "Not a day so much as a landing. CZ617 comes in over the Canterbury Plains at 17:20, and after biosecurity — which is slow and thorough here, and slower if there's a tent or muddy boots in the bag — you'll be in the arrivals hall around half six, blinking, thirty-two hours out of Amsterdam and twelve hours out of step with your own body. The campervan depot shut at 16:30, which turns out to be a gift: instead of signing for an unfamiliar six-metre vehicle and driving it over a volcano on the wrong side of the road while your brain is still somewhere over the Tasman, you walk two minutes across the forecourt, eat something, and go horizontal. Set an alarm anyway — the point of tonight is to be standing at the depot at eight tomorrow, awake.",
+    acts: [
+      { name: "Biosecurity — declare the boots, the tent, any food", price: 0, note: "instant NZ$400 fine if you don't; the queue is the slow part" },
+      { name: "Grab NZ SIMs / eSIM data at the terminal", price: 15 },
+      { name: "Sleep. Genuinely, that's the itinerary.", price: 0 },
+    ],
+  },
+  {
+    n: 2, date: "Thu 5 Nov", title: "Touchdown → the French harbour", nightN: 2,
     imgKey: "akaroa", gallery: ["akaroa", "banks_peninsula", "akaroa2"],
     drive: { from: "Christchurch Airport", to: "Akaroa", km: 84, time: "1 h 30 m" },
-    body: "Wheels down at 12:50 after 36 hours and a full day in Hong Kong. Sign for the campervan, allow an hour for the briefing, raid a supermarket — and then take the kindest first drive imaginable: 84 km south-east, out across the plains and up over the rim of an extinct volcano, before dropping into Akaroa. New Zealand's only French settlement: rues instead of streets, a pastel harbour, the world's smallest dolphins somewhere out in the bay. Sunset isn't until half past eight in November, so there's still an evening in it. Moules-frites, because of course. Then sleep — you're in the water at nine.",
+    body: "At the depot for eight, slept and on New Zealand time — which is the whole reason last night's hotel exists. Sign for the campervan, allow an hour for the briefing (and get the green self-containment warrant confirmed in writing before you drive off), raid a supermarket for the first few days of van food, and then take the kindest first drive imaginable: 84 km south-east, out across the plains and up over the rim of an extinct volcano, before dropping into Akaroa. New Zealand's only French settlement: rues instead of streets, a pastel harbour, the world's smallest dolphins somewhere out in the bay. You arrive by lunchtime instead of late afternoon, so there's a whole afternoon for the Summit Road and the lighthouse. Sunset isn't until half past eight in November. Moules-frites, because of course. Then sleep — you're in the water at nine.",
     acts: [
-      { name: "Pick up campervan, CHC Airport", price: null, note: "allow 1 h for the briefing" },
+      { name: "Pick up campervan, CHC Airport (depot opens 08:00)", price: null, note: "allow 1 h for the briefing" },
       { name: "Summit Road viewpoints, Banks Peninsula", price: 0 },
       { name: "Akaroa village & lighthouse stroll", price: 0 },
     ],
   },
   {
-    n: 2, date: "Fri 6 Nov", title: "Hector's dolphins → the darkest sky", nightN: 2,
+    n: 3, date: "Fri 6 Nov", title: "Hector's dolphins → the darkest sky", nightN: 3,
     imgKey: "hectorsdolphin", gallery: ["hectorsdolphin", "akaroa", "tekapo", "tekapo_stars", "mtjohn"],
     drive: { from: "Akaroa", to: "Lake Tekapo", km: 290, time: "3 h 45 m" },
     body: "Morning on the water with Black Cat — swim with (or cruise beside) Hector's dolphins, the world's smallest and rarest, found only here. Your dates sit in settled mid-season now rather than the opening fortnight, so boats are running properly. Climb out of the crater by lunchtime and head west: the famous pie at Fairlie Bakehouse, cheese in Geraldine, then up over Burkes Pass and the moment the Mackenzie Basin opens out in front of you. Tekapo by late afternoon. And tonight is the one you rearranged the whole trip for — the Dark Sky Project's summit tour at Mt John observatory, three days out from a new moon, with your campsite ten minutes down the hill.",
@@ -258,7 +290,7 @@ const DAYS = [
     ],
   },
   {
-    n: 3, date: "Sat 7 Nov", title: "Into Aoraki's shadow", nightN: 3,
+    n: 4, date: "Sat 7 Nov", title: "Into Aoraki's shadow", nightN: 4,
     imgKey: "mtcook", gallery: ["mtcook", "tekapo2", "pukaki", "mtcook2"],
     drive: { from: "Lake Tekapo", to: "White Horse Hill, Mt Cook", km: 105, time: "1 h 30 m" },
     body: "A genuinely slow morning for once — the Church of the Good Shepherd before the tour buses, then a long soak at Tekapo Springs looking at the lake you slept beside. The drive west is only ninety minutes, and it contains one of the great pull-over-now moments: SH8 crests, and Lake Pukaki's impossible blue opens up with Aoraki floating at the far end. Turn north on SH80 and follow the water for 55 km into the national park. In mid-November the sun sets close to nine, so golden hour on the Hooker Valley Track starts around seven — three swing bridges to a glacier lake beneath the country's highest mountain. Walk back to the van. You're parked at the trailhead, under Sefton's ice.",
@@ -270,7 +302,7 @@ const DAYS = [
     ],
   },
   {
-    n: 4, date: "Sun 8 Nov", title: "Icebergs → the new-moon camp", nightN: 4,
+    n: 5, date: "Sun 8 Nov", title: "Icebergs → the new-moon camp", nightN: 5,
     imgKey: "tasmanglacier", gallery: ["tasmanglacier", "sealytarns", "pukaki", "camp_pukaki"],
     drive: { from: "Mt Cook", to: "Tasman Valley → Lake Pukaki Overflow", km: 70, time: "1 h 15 m total" },
     body: "Morning by energy level: Glacier Explorers boats you among floating icebergs on the Tasman Glacier's terminal lake (season runs 1 Sep–Apr, so November is comfortably in), or it's 2,200 steps up to Sealy Tarns for the look-down over everything you walked yesterday. Lunch is non-negotiable — Aoraki salmon sashimi from the Mt Cook Alpine Salmon shack on Pukaki's shore. Then a short drive to The Pines, park facing up the lake, and wait. Tomorrow is the new moon. There will be no moon at all tonight, you are in the middle of a UNESCO Dark Sky Reserve, and it costs nothing. This is the best night of the trip and it isn't close.",
@@ -282,7 +314,7 @@ const DAYS = [
     ],
   },
   {
-    n: 5, date: "Mon 9 Nov", title: "Lindis Pass → Queenstown", nightN: 5,
+    n: 6, date: "Mon 9 Nov", title: "Lindis Pass → Queenstown", nightN: 6,
     imgKey: "lindispass", gallery: ["lindispass", "queenstown", "queenstown2", "kea"],
     drive: { from: "Lake Pukaki", to: "Queenstown", km: 270, time: "3 h 30 m" },
     body: "Unzip the curtains for sunrise on Aoraki across the lake — the best free breakfast view in the country. Then south through the burnt-gold moonscape of Lindis Pass, a fruit-and-icecream stop in Cromwell, and the Kawarau Gorge, where you can wave at whoever is currently upside down beneath the bridge. Queenstown by mid-afternoon. This is the one big-town night: gondola up to Bob's Peak for dinner above the lights, or a private cedar tub at Onsen watching the Shotover canyon go dark. Onsen releases availability well ahead and it's already open through December — book it before you read any further.",
@@ -295,7 +327,7 @@ const DAYS = [
     ],
   },
   {
-    n: 6, date: "Tue 10 Nov", title: "Glenorchy → into Fiordland", nightN: 6,
+    n: 7, date: "Tue 10 Nov", title: "Glenorchy → into Fiordland", nightN: 7,
     imgKey: "glenorchy", gallery: ["glenorchy", "paradise_glenorchy", "teanau"],
     drive: { from: "Queenstown", to: "Te Anau via Glenorchy", km: 300, time: "4 h 15 m total" },
     body: "Start with one of the world's great drives and then come back down it: the Glenorchy road, 45 minutes of Lake Wakatipu cliff-edge cinema. Photograph the red wharf shed, take a peek up the Dart Valley towards Paradise (Isengard, if you must), then turn south along the Devil's Staircase and run down through Kingston and Lumsden to Te Anau — Fiordland's quiet lakeside base. Early dinner, fuel up tonight rather than tomorrow, alarm set for quarter past six. Tomorrow is the big one.",
@@ -306,7 +338,7 @@ const DAYS = [
     ],
   },
   {
-    n: 7, date: "Wed 11 Nov", title: "Milford Sound / Piopiotahi", nightN: 7,
+    n: 8, date: "Wed 11 Nov", title: "Milford Sound / Piopiotahi", nightN: 8,
     imgKey: "milford", gallery: ["milford", "milfordroad", "mirrorlakes", "milford2", "homertunnel"],
     drive: { from: "Te Anau", to: "Milford → back to Cascade Creek", km: 165, time: "2 h 45 m driving" },
     body: "Leave by 7:15. The Milford Road is a destination in its own right — the Eglinton Valley's golden flats, Mirror Lakes, the avalanche-country approach to the Homer Tunnel, then the long dark hole through the mountain and THAT reveal on the other side. Cruise beneath Mitre Peak among waterfalls still fat with snowmelt. November has you past the worst of the avalanche-closure season with the falls still running hard — the good half of both worlds. One warning: Fiordland's sandflies properly wake up this month, so repellent is not optional. Tonight you don't leave the park: camp at Cascade Creek and have the Eglinton Valley to yourselves at dusk.",
@@ -317,7 +349,7 @@ const DAYS = [
     ],
   },
   {
-    n: 8, date: "Thu 12 Nov", title: "Key Summit → a lake of your own", nightN: 8,
+    n: 9, date: "Thu 12 Nov", title: "Key Summit → a lake of your own", nightN: 9,
     imgKey: "keysummit", gallery: ["keysummit", "milfordroad", "mokelake"],
     drive: { from: "Cascade Creek", to: "Moke Lake", km: 250, time: "3 h 45 m" },
     body: "You wake at the trailhead. Key Summit — the day-walk section of the Routeburn — climbs to alpine tarns with a 360° amphitheatre of Fiordland peaks around you. Three hours return; go early, while the tarns are still glass. Then the long run back: Te Anau for lunch, Devil's Staircase, past Queenstown for supplies and a burger, and finally the escape — a gravel road up into the hills behind the town, where Moke Lake sits as a perfect horseshoe with room for your van beside it. No reception, no light. After Milford's crowds, the silence is the point.",
@@ -327,7 +359,7 @@ const DAYS = [
     ],
   },
   {
-    n: 9, date: "Fri 13 Nov", title: "Crown Range → Wanaka", nightN: 9,
+    n: 10, date: "Fri 13 Nov", title: "Crown Range → Wanaka", nightN: 10,
     imgKey: "cardrona", gallery: ["cardrona", "arrowtown", "wanaka", "wanaka2"],
     drive: { from: "Moke Lake", to: "Wanaka via Arrowtown & the Crown Range", km: 95, time: "2 h 0 m" },
     body: "A short day, deliberately. Morning lap of the Moke Lake loop track, then down into Arrowtown for the gold-rush lanes and the restored Chinese settlement. Up over the Crown Range — New Zealand's highest sealed road, hairpins and a view back over the whole Wakatipu basin — with the mandatory stop at the 1863 Cardrona Hotel for the photograph and a pint. Into Wanaka by mid-afternoon, spa pool by five. (Footnote: today is Canterbury Anniversary Day and the middle of Show Week back in Christchurch, which snarls up that end of the island. You are 400 km away in Otago. Well played.)",
@@ -338,7 +370,7 @@ const DAYS = [
     ],
   },
   {
-    n: 10, date: "Sat 14 Nov", title: "Roy's Peak — open, finally", nightN: 10,
+    n: 11, date: "Sat 14 Nov", title: "Roy's Peak — open, finally", nightN: 11,
     imgKey: "royspeak", gallery: ["royspeak", "wanaka", "glendhubay", "wanaka2"],
     drive: { from: "Wanaka", to: "Glendhu Bay", km: 12, time: "15 m" },
     body: "Here is a straight gift from the calendar. Roy's Peak crosses private farmland and closes every year for lambing from 1 October to 10 November — the October version of this trip would have driven to the trailhead and found the gate shut. It reopened three days ago. So: 16 km, 1,300 metres up, relentless switchbacks, and the most photographed ridgeline in the country waiting at the top. Mid-November hands you around fifteen hours of daylight to do it in. Gentler door: Diamond Lake & Rocky Mountain, half the effort for eighty per cent of the view. Either way, finish at That Wanaka Tree for golden hour, eat on the lakefront, then roll fifteen minutes out to Glendhu Bay and sleep at the foot of the mountain you just climbed.",
@@ -349,7 +381,7 @@ const DAYS = [
     ],
   },
   {
-    n: 11, date: "Sun 15 Nov", title: "Haast Pass → glacier country", nightN: 11,
+    n: 12, date: "Sun 15 Nov", title: "Haast Pass → glacier country", nightN: 12,
     imgKey: "bluepools", gallery: ["bluepools", "thundercreek", "haastpass", "lakehawea", "franzjosef"],
     drive: { from: "Glendhu Bay", to: "Franz Josef", km: 285, time: "4 h 0 m + stops" },
     body: "The drive that earns the superlatives, run in reverse. North past Lake Hāwea and The Neck where the two great lakes almost touch, then into Haast Pass: the Blue Pools' glacial glass, Fantail Falls, Thunder Creek. Out the western side into rainforest and onto the coast — Ship Creek's dune and swamp-forest walks, surf hammering below Knights Point — then the long green run north to Franz Josef. Tonight is the tree-hut, and after dark the free glowworm forest walk at the edge of the village.",
@@ -361,7 +393,7 @@ const DAYS = [
     ],
   },
   {
-    n: 12, date: "Mon 16 Nov", title: "Helicopter onto the glacier", nightN: 12,
+    n: 13, date: "Mon 16 Nov", title: "Helicopter onto the glacier", nightN: 13,
     imgKey: "franzjosef2", gallery: ["franzjosef2", "franzjosef", "lakematheson", "lakemapourika", "foxglacier"],
     drive: { from: "Franz Josef", to: "Lake Matheson loop → Lake Mapourika", km: 60, time: "1 h 15 m total" },
     body: "The big-ticket morning: a heli-hike drops you ON Franz Josef Glacier for up to 2.5 hours among ice caves and blue crevasses — the only way onto the ice now, and the trip's grand splurge. Cheaper plan: a 25-minute scenic flight with a snow landing. Free plan: the valley walk to the terminal face. All of it is weather-dependent with a full refund if cancelled, so take the first slot of the day — and note you have a second shot tomorrow morning before the drive north, which is exactly why the glaciers sit here in the itinerary. Late afternoon, the Lake Matheson mirror loop for the classic reflection of Aoraki and Tasman, then a dead-quiet DOC night on Lake Mapourika.",
@@ -372,7 +404,7 @@ const DAYS = [
     ],
   },
   {
-    n: 13, date: "Tue 17 Nov", title: "Hokitika Gorge → the wild coast", nightN: 13,
+    n: 14, date: "Tue 17 Nov", title: "Hokitika Gorge → the wild coast", nightN: 14,
     imgKey: "hokitikagorge", gallery: ["hokitikagorge", "hokitika", "punakaiki", "punakaiki2", "westcoast"],
     drive: { from: "Lake Mapourika", to: "Punakaiki", km: 280, time: "4 h 0 m + stops" },
     body: "If yesterday's flight blew out, this morning is the retry. Otherwise: north through the rainforest to Hokitika — driftwood-sign beach, greenstone carvers, arguably the best pies on the coast — with an inland detour to Hokitika Gorge, where the water is a turquoise that looks colour-graded (free, 45-minute loop, two swing bridges). Then the coast road north of Greymouth with the Tasman on your left and rainforest cliffs on your right. Time your arrival at Punakaiki for high tide, when the Pancake Rocks blowholes detonate. Paddle the limestone gorge of the Pororari if there's light left — there will be. Camp in the dunes, surf all night.",
@@ -385,7 +417,7 @@ const DAYS = [
     ],
   },
   {
-    n: 14, date: "Wed 18 Nov", title: "Lewis Pass → thermal water", nightN: 14,
+    n: 15, date: "Wed 18 Nov", title: "Lewis Pass → thermal water", nightN: 15,
     imgKey: "lewispass", gallery: ["lewispass", "westcoast", "hanmer"],
     drive: { from: "Punakaiki", to: "Hanmer Springs", km: 285, time: "4 h 0 m" },
     body: "The last big transit, and a good one. South down the coast, then inland at Greymouth: coffee in gold-rush Reefton, beech forest, one-lane bridges, and up over Lewis Pass — the quietest of the three alpine crossings and the prettiest in late spring, when the rivers are still loud. Down the far side into the Hurunui and along to Hanmer Springs, arriving with the whole late afternoon spare. Then dissolve two weeks of driving in forty-degree thermal water until the stars come out. Tomorrow is whales.",
@@ -395,7 +427,7 @@ const DAYS = [
     ],
   },
   {
-    n: 15, date: "Thu 19 Nov", title: "Sperm whales off the canyon", nightN: 15,
+    n: 16, date: "Thu 19 Nov", title: "Sperm whales off the canyon", nightN: 16,
     imgKey: "whale", gallery: ["whale", "dolphins_dusky", "kaikoura", "kaikoura2", "seals"],
     drive: { from: "Hanmer Springs", to: "Kaikōura", km: 130, time: "1 h 45 m" },
     body: "A short inland run over the Hundalees brings you to the coast well before lunch, and the timing matters: from November, Whale Watch adds a fourth daily sailing at 3:30 pm on top of 7:15, 10:00 and 12:45. Take an early-afternoon boat. A kilometre-deep ocean canyon sits right offshore, which is why resident sperm whales are here all year, with dusky dolphins and wandering albatross as the warm-up act — 95% sighting rate, 80% refunded if they don't show. And if the sea says no today, you still have tomorrow morning before you drive: the only reason the last two days are laid out this way. Afterwards, Point Kean seals at low tide, crayfish from Nin's Bin up the coast, and a chalet with a bath in it.",
@@ -407,7 +439,7 @@ const DAYS = [
     ],
   },
   {
-    n: 16, date: "Fri 20 Nov", title: "Seal coast → Ōtautahi", nightN: 16,
+    n: 17, date: "Fri 20 Nov", title: "Seal coast → Ōtautahi", nightN: 17,
     imgKey: "kaikoura2", gallery: ["kaikoura2", "seals", "christchurch2", "chc_punting"],
     drive: { from: "Kaikōura", to: "Christchurch", km: 180, time: "2 h 30 m" },
     body: "Your spare whale slot, if you need it. If you don't, run 25 km north instead to Ohau Point and meet a few hundred fur seals from the roadside, then turn and drive the coast road south with the Pacific on your left the whole way — the drive you'd have done jet-lagged and blinking on day one if you'd gone the other way round. Into Christchurch by early afternoon: check into the hotel inside the Arts Centre, give the van a well-earned vacuum and empty the tanks, then Riverside Market for dinner and a slow walk through a city that has spent fifteen years rebuilding itself — street art, the cardboard cathedral, New Regent Street's pastel arcade.",
@@ -418,15 +450,17 @@ const DAYS = [
     ],
   },
   {
-    n: 17, date: "Sat 21 Nov", title: "Last morning → home", nightN: null,
-    imgKey: "christchurch", gallery: ["christchurch", "chc_punting", "christchurch2"],
-    drive: { from: "Christchurch", to: "CHC Airport", km: 12, time: "20 m" },
-    body: "A real last morning rather than a scramble: the flight is at 14:20, so the van needs to be back around eleven and you need to be at the terminal by half past. That still leaves breakfast and the Botanic Gardens across the road, deep in late-spring roses, or punting on the Avon if you're feeling Edwardian. One final flat white on New Regent Street, refuel, hand back the keys, and lift off over the Alps you just drove around. Hong Kong tonight, Amsterdam at half past six tomorrow morning. Kia ora, Te Waipounamu — you were ridiculous.",
+    n: 18, date: "Sat 21 Nov", title: "A whole last day → home", nightN: null,
+    imgKey: "chc_punting", gallery: ["chc_punting", "christchurch", "christchurch2", "banks_peninsula"],
+    drive: { from: "Christchurch", to: "Lyttelton / Sumner → CHC Airport", km: 55, time: "1 h 30 m total" },
+    body: "The booked flight's one unambiguous gift: CZ618 doesn't leave until 22:30, so this is a real day, not a scramble to an eleven o'clock van return. Keep the camper — the hire is charged to today either way — and use it. Breakfast, then the Botanic Gardens across the road at their late-November peak, deep in roses. After that you have hours to spend: over the Port Hills to Lyttelton for the Saturday farmers' market and the harbour you looked down on from the Summit Road sixteen days ago, or out to Sumner for fish and chips on the beach and a last look at the Pacific. Back into town mid-afternoon for the tram, the cardboard cathedral and a final flat white on New Regent Street. Then refuel, empty the tanks, and hand the keys back by half four — the depot closes at 16:30 and that is a hard edge, the one piece of timing today that isn't relaxed. Shuttle across, dinner airside, wheels up at half ten. Guangzhou tomorrow morning, Amsterdam at 18:35 tomorrow evening. Kia ora, Te Waipounamu — you were ridiculous.",
     acts: [
       { name: "Botanic Gardens", price: 0 },
+      { name: "Lyttelton Farmers' Market (Saturdays, 10:00–13:00)", price: 0, url: "https://www.lytteltonfarmersmarket.co.nz/" },
+      { name: "Sumner beach + fish & chips", price: 15 },
       { name: "Punting on the Avon (option)", price: 23, url: "https://www.christchurchattractions.nz/punting/",
         alts: [{ name: "tram + gondola + punting day pass", price: 61, url: "https://www.christchurchattractions.nz/packages/" }] },
-      { name: "Refuel + return campervan (by ~11:00)", price: null },
+      { name: "Refuel + return campervan — HARD deadline 16:30", price: null, must: true },
     ],
   },
 ];
@@ -436,7 +470,7 @@ const LEGS = [
   { type: "drive", label: "CHC Airport → Akaroa · 84 km", pts: [[-43.4876,172.5374],[-43.5321,172.6362],[-43.62,172.50],[-43.66,172.70],[-43.75,172.85],[-43.8035,172.9683]] },
   { type: "drive", label: "Akaroa → Lake Tekapo · 290 km", pts: [[-43.8035,172.9683],[-43.75,172.85],[-43.66,172.70],[-43.62,172.50],[-43.75,172.27],[-43.91,171.75],[-44.097,171.245],[-44.099,170.83],[-44.0046,170.4771]] },
   { type: "drive", label: "Tekapo → White Horse Hill, Mt Cook · 105 km", pts: [[-44.0046,170.4771],[-44.05,170.35],[-44.10,170.22],[-44.192,170.157],[-44.1700,170.1200],[-44.06,170.11],[-43.90,170.10],[-43.7180,170.0920]] },
-  { type: "daytrip", label: "Tasman Valley → Pukaki Overflow · Day 4", pts: [[-43.7180,170.0920],[-43.7250,170.1650],[-43.7180,170.0920],[-43.90,170.10],[-44.06,170.11],[-44.1700,170.1200]] },
+  { type: "daytrip", label: "Tasman Valley → Pukaki Overflow · Day 5", pts: [[-43.7180,170.0920],[-43.7250,170.1650],[-43.7180,170.0920],[-43.90,170.10],[-44.06,170.11],[-44.1700,170.1200]] },
   { type: "drive", label: "Pukaki → Queenstown via Lindis Pass · 270 km", pts: [[-44.1700,170.1200],[-44.255,170.10],[-44.486,169.97],[-44.59,169.64],[-44.86,169.21],[-45.038,169.196],[-45.01,168.93],[-45.0312,168.6626]] },
   { type: "drive", label: "Queenstown → Te Anau via Glenorchy · 300 km", pts: [[-45.0312,168.6626],[-44.97,168.50],[-44.8486,168.3852],[-44.97,168.50],[-45.0312,168.6626],[-45.20,168.72],[-45.33,168.71],[-45.55,168.40],[-45.67,168.24],[-45.55,167.95],[-45.4145,167.7180]] },
   { type: "drive", label: "Te Anau → Milford → Cascade Creek · 165 km", pts: [[-45.4145,167.7180],[-45.16,167.85],[-44.97,168.00],[-44.8900,168.0600],[-44.83,168.07],[-44.77,167.99],[-44.6717,167.9256],[-44.77,167.99],[-44.83,168.07],[-44.8900,168.0600]] },
@@ -444,31 +478,32 @@ const LEGS = [
   { type: "drive", label: "Moke Lake → Wanaka via Crown Range · 95 km", pts: [[-45.0044,168.5550],[-45.02,168.60],[-45.0312,168.6626],[-45.02,168.74],[-44.9410,168.8350],[-44.95,168.91],[-44.8746,168.9882],[-44.7032,169.1321]] },
   { type: "drive", label: "Wanaka → Glendhu Bay · 12 km", pts: [[-44.7032,169.1321],[-44.6680,168.9990]] },
   { type: "drive", label: "Glendhu → Franz Josef via Haast Pass · 285 km", pts: [[-44.6680,168.9990],[-44.7032,169.1321],[-44.61,169.25],[-44.40,169.27],[-44.23,169.23],[-44.158,169.295],[-44.107,169.354],[-44.00,169.10],[-43.881,169.042],[-43.71,169.30],[-43.59,169.59],[-43.3870,170.1833]] },
-  { type: "daytrip", label: "Lake Matheson loop → Lake Mapourika · Day 12", pts: [[-43.3870,170.1833],[-43.4646,170.0176],[-43.4480,169.9640],[-43.4646,170.0176],[-43.3870,170.1833],[-43.3128,170.2020]] },
+  { type: "daytrip", label: "Lake Matheson loop → Lake Mapourika · Day 13", pts: [[-43.3870,170.1833],[-43.4646,170.0176],[-43.4480,169.9640],[-43.4646,170.0176],[-43.3870,170.1833],[-43.3128,170.2020]] },
   { type: "drive", label: "Mapourika → Punakaiki via Hokitika Gorge · 280 km", pts: [[-43.3128,170.2020],[-43.3870,170.1833],[-43.26,170.36],[-43.10,170.85],[-42.9469,171.0210],[-42.7170,170.9633],[-42.45,171.21],[-42.35,171.25],[-42.1089,171.3372]] },
   { type: "drive", label: "Punakaiki → Hanmer via Lewis Pass · 285 km", pts: [[-42.1089,171.3372],[-42.35,171.25],[-42.45,171.21],[-42.32,171.55],[-42.12,171.86],[-42.33,172.18],[-42.38,172.24],[-42.45,172.40],[-42.55,172.70],[-42.5215,172.8278]] },
   { type: "drive", label: "Hanmer Springs → Kaikōura · 130 km", pts: [[-42.5215,172.8278],[-42.54,172.95],[-42.62,173.10],[-42.55,173.30],[-42.48,173.55],[-42.4008,173.6814]] },
   { type: "drive", label: "Kaikōura → Christchurch · 180 km", pts: [[-42.4008,173.6814],[-42.52,173.51],[-42.75,173.30],[-42.90,173.05],[-43.10,172.75],[-43.32,172.62],[-43.5321,172.6362]] },
+  { type: "daytrip", label: "Lyttelton & Sumner → CHC Airport · Day 18", pts: [[-43.5321,172.6362],[-43.5900,172.7050],[-43.6033,172.7233],[-43.5667,172.7550],[-43.5321,172.6362],[-43.4876,172.5374]] },
 ];
 
 const POIS = [
-  { name: "Christchurch Airport", coords: [-43.4876, 172.5374], kind: "day 1 & 17", note: "Camper pick-up Thu 5 Nov · drop-off Sat 21 Nov by 11:00" },
-  { name: "Mt John Observatory", coords: [-43.9866, 170.4650], kind: "day 2", note: "Dark Sky Summit tour — 3 days before new moon" },
-  { name: "Church of the Good Shepherd", coords: [-44.0035, 170.4730], kind: "day 3", note: "Lake Tekapo" },
-  { name: "Hooker Valley Track", coords: [-43.7340, 170.0966], kind: "day 3", note: "Golden hour, straight from your campsite" },
-  { name: "Lake Pukaki Overflow — The Pines", coords: [-44.1700, 170.1200], kind: "day 4", note: "Free camp on the eve of the new moon" },
-  { name: "Glenorchy", coords: [-44.8486, 168.3852], kind: "day 6", note: "The road in is the point" },
-  { name: "Milford Sound / Piopiotahi", coords: [-44.6717, 167.9256], kind: "day 7", note: "Cruise €76–88 · kayak €170" },
-  { name: "Roy's Peak trailhead", coords: [-44.6920, 169.0500], kind: "day 10", note: "16 km · 1,300 m up · reopens 11 Nov after lambing" },
-  { name: "Blue Pools, Haast Pass", coords: [-44.1580, 169.2950], kind: "day 11", note: "Free, 1 h return" },
-  { name: "Franz Josef Glacier heli-hike", coords: [-43.4670, 170.1880], kind: "day 12", note: "€450 pp (snow-landing flight €193)" },
-  { name: "Hokitika Gorge", coords: [-42.9469, 171.0210], kind: "day 13", note: "Turquoise water, swing bridges — free" },
-  { name: "Pancake Rocks, Punakaiki", coords: [-42.1140, 171.3260], kind: "day 13", note: "Blowholes at high tide — free" },
+  { name: "Christchurch Airport", coords: [-43.4876, 172.5374], kind: "day 1, 2 & 18", note: "Land Wed 4 Nov 17:20 (depot shut) · camper pick-up Thu 5 Nov 08:00 · drop-off Sat 21 Nov by 16:30 · fly 22:30" },
+  { name: "Mt John Observatory", coords: [-43.9866, 170.4650], kind: "day 3", note: "Dark Sky Summit tour — 3 days before new moon" },
+  { name: "Church of the Good Shepherd", coords: [-44.0035, 170.4730], kind: "day 4", note: "Lake Tekapo" },
+  { name: "Hooker Valley Track", coords: [-43.7340, 170.0966], kind: "day 4", note: "Golden hour, straight from your campsite" },
+  { name: "Lake Pukaki Overflow — The Pines", coords: [-44.1700, 170.1200], kind: "day 5", note: "Free camp on the eve of the new moon" },
+  { name: "Glenorchy", coords: [-44.8486, 168.3852], kind: "day 7", note: "The road in is the point" },
+  { name: "Milford Sound / Piopiotahi", coords: [-44.6717, 167.9256], kind: "day 8", note: "Cruise €76–88 · kayak €170" },
+  { name: "Roy's Peak trailhead", coords: [-44.6920, 169.0500], kind: "day 11", note: "16 km · 1,300 m up · reopens 11 Nov after lambing" },
+  { name: "Blue Pools, Haast Pass", coords: [-44.1580, 169.2950], kind: "day 12", note: "Free, 1 h return" },
+  { name: "Franz Josef Glacier heli-hike", coords: [-43.4670, 170.1880], kind: "day 13", note: "€450 pp (snow-landing flight €193)" },
+  { name: "Hokitika Gorge", coords: [-42.9469, 171.0210], kind: "day 14", note: "Turquoise water, swing bridges — free" },
+  { name: "Pancake Rocks, Punakaiki", coords: [-42.1140, 171.3260], kind: "day 14", note: "Blowholes at high tide — free" },
 ];
 
 /* ---------- the campervan ---------- */
 const CAMPER = {
-  summary: "One certified self-contained 2-berth, Christchurch ↔ Christchurch, 16 days. November is still officially shoulder season (Sep–Nov) — cheaper than the December–February peak — but it is the last month before rates climb, and the October promo window has closed: THL's ‘500FIVE’ deal expired 24 Jul, and Britz's current ‘every 10th day free’ offer only covers travel to 31 Oct 2026. The 5%-off long-hire deal needs 21+ days, so 16 days misses it too. Assume list price, then beat it with a live comparison quote — real November quotes still tend to land under the sticker rates below.",
+  summary: "One certified self-contained 2-berth, Christchurch ↔ Christchurch, 16 days — collected 08:00 Thu 5 Nov, back by 16:30 Sat 21 Nov. (Note the hire did NOT get longer when the flights moved: the 4 Nov arrival lands after the depot closes, so that night is a hotel, and the 21 Nov departure is late enough to keep the van all day. Same 16 rental days, more trip.) November is still officially shoulder season (Sep–Nov) — cheaper than the December–February peak — but it is the last month before rates climb, and the October promo window has closed: THL's ‘500FIVE’ deal expired 24 Jul, and Britz's current ‘every 10th day free’ offer only covers travel to 31 Oct 2026. The 5%-off long-hire deal needs 21+ days, so 16 days misses it too. Assume list price, then beat it with a live comparison quote — real November quotes still tend to land under the sticker rates below.",
   days: 16,
   options: [
     { co: "Britz", model: "Venturer · 2-berth coachbuilt", perDay: 190, pick: "value", pickLabel: "the pick — best value",
@@ -493,21 +528,15 @@ const CAMPER = {
 
 /* ---------- flights ---------- */
 const FLIGHTS = {
-  out: { route: "Amsterdam → Christchurch · 1 stop, Hong Kong", date: "Tue 3 Nov 12:30 → Thu 5 Nov 12:50 · 36 h 20" },
-  home: { route: "Christchurch → Amsterdam · 1 stop, Hong Kong", date: "Sat 21 Nov 14:20 → Sun 22 Nov 06:30 · 28 h 10" },
-  price: 1293,
+  out: { route: "Amsterdam → Christchurch · 1 stop, Guangzhou", date: "Mon 2 Nov 21:40 → Wed 4 Nov 17:20 · 31 h 40" },
+  home: { route: "Christchurch → Amsterdam · 1 stop, Guangzhou", date: "Sat 21 Nov 22:30 → Sun 22 Nov 18:35 · 32 h 05" },
+  price: 1162,
   options: [
-    { tag: "your quote — take it", hot: true, name: "Cathay Pacific via Hong Kong", price: "€1,293 pp · €2,585 for two",
-      note: "AMS→HKG→CHC and back, one stop each way, 8% below the route's average emissions, 11 sellers listing the same fare. This flight only exists because you moved to November: Cathay's Hong Kong–Christchurch service is SEASONAL, running 1 Nov 2026 – 27 Mar 2027 and only 3× weekly in November. Worth knowing — outbound you land in Hong Kong around 07:15 and don't leave until roughly 20:20, so that's a ~13-hour daytime layover, a full day in the city rather than a lounge nap (Belgians enter Hong Kong visa-free). Coming home the connection is short, about 3 hours. With only three weekly frequencies, date changes will be awkward — book the exact dates.",
-      url: "https://www.skyscanner.net/transport/flights/ams/chc/261103/261121/?adults=2&cabinclass=economy" },
-    { tag: "shortest — worth pricing", name: "Air New Zealand / Singapore Airlines via Singapore", price: "€1,450–1,850 pp return",
-      note: "Air NZ restarted its Singapore–Christchurch NONSTOP on 28 Oct 2026 (Wed/Fri/Sun through 27 Nov, retrofitted 787s). In October this route did not yet exist; for your dates it does, which makes AMS→SIN→CHC the fastest way to Christchurch on the planet — roughly 26–27 h door to door versus 36 h. You pay for it, but if the Hong Kong layover doesn't appeal, this is the trade.",
-      url: "https://www.skyscanner.net/transport/flights/ams/chc/261103/261121/?adults=2&cabinclass=economy" },
-    { tag: "cheapest", name: "China Southern via Guangzhou", price: "€1,050–1,300 pp return",
-      note: "The Guangzhou–Christchurch nonstop came back on 26 Oct 2026, daily on 787s through 27 Mar 2027 — so November is the first month this is a true one-stop rather than a three-leg crawl via Auckland. Belgians get China's 240-hour visa-free transit, making a Guangzhou stopover free to add. Cheapest fares on the route, historically.",
-      url: "https://www.skyscanner.net/transport/flights/ams/chc/261103/261121/?adults=2&cabinclass=economy" },
+    { tag: "BOOKED ✓ · confirmed", hot: true, name: "China Southern via Guangzhou", price: "€1,162 pp · €2,323 for two",
+      note: "Ticketed and confirmed for two. Out AMS Mon 2 Nov 21:40, landing CHC Wed 4 Nov 17:20; home CHC Sat 21 Nov 22:30, into AMS Sun 22 Nov 18:35. The long legs are China Southern's Guangzhou–Christchurch nonstop, back on the map since 26 Oct 2026 and daily on 787s through 27 Mar 2027: inbound CZ617 departs Guangzhou 00:50 and arrives 17:20, outbound CZ618 leaves Christchurch 22:30 and lands Guangzhou 05:20. Two consequences run through this whole plan. The 17:20 arrival is after the campervan depot closes at 16:30, so night 1 is an airport hotel and the van is collected on the morning of the 5th. And the 22:30 departure hands you a genuinely full final day in Christchurch instead of an 11:00 van return. €1,162 pp also came in €131 under the Cathay quote this plan was previously built on.",
+      url: "https://www.csair.com/en/" },
   ],
-  advice: "The November dates are a genuine stroke of luck on flights. Three separate long-haul routes into Christchurch — Cathay's Hong Kong service, Air NZ's Singapore nonstop and China Southern's Guangzhou nonstop — all start or restart in the last week of October 2026, which is precisely why €1,293 beats the €1,400 anchor the October plan was built on. Everything below is a one-stop; in early October, essentially nothing was. Book the Cathay fare now: three weekly frequencies is thin, and the first weeks of a seasonal route sell into a fixed, small inventory.",
+  advice: "Two things still need doing on the flights themselves. First, the Guangzhou ground time: the booked elapsed times (31 h 40 out, 32 h 05 back) minus the known Guangzhou–Christchurch legs imply roughly nine hours on the ground at CAN outbound — arriving mid-afternoon on 3 Nov and not leaving until 00:50 — and something like seven or eight hours on the way home, arriving 05:20 and leaving early afternoon. Confirm the exact AMS–CAN leg times on the ticket, then decide per direction whether you stay airside or clear immigration; nine evening hours in a terminal is a long time, and Guangzhou's airport transit hotels book out. Second, check the entry paperwork for a stop that long — China's visa-free arrangements for Belgian passports and its transit exemptions have both been moving targets, so verify what applies to you on your actual dates rather than trusting anything written here in August. Beyond that: seats, meals and the NZ Traveller Declaration (free, online, within 24 h of departure).",
 };
 
 /* ---------- freedom camping rules ---------- */
@@ -524,15 +553,15 @@ const CAMP_RULES = {
 
 /* ---------- budget (€ per person) ---------- */
 const BUDGET = {
-  note: "Lodge prices are live Booking.com checks; camp fees, camper rates and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Flights are the actual quoted Cathay fare, not an estimate. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim it.",
-  total: 4673, trimmed: 3700, heliUpgrade: 257,
+  note: "Lodge prices are live Booking.com checks; camp fees, camper rates and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Flights are now the ACTUAL BOOKED China Southern fare — €2,323 for two, €1,162 pp — not an estimate. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim it.",
+  total: 4642, trimmed: 3670, heliUpgrade: 257,
   rows: [
-    { cat: "Flights AMS ⇄ Christchurch return (Cathay, quoted)", pp: 1293 },
+    { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
     { cat: "Campervan · 16 days + insurance + road charges", pp: 1015 },
     { cat: "Camp nights × 9 (one is free)", pp: 100 },
-    { cat: "Lodge nights × 7 (boutique picks)", pp: 605 },
-    { cat: "Fuel · 2,730 km diesel (2,870 incl. side trips)", pp: 145 },
-    { cat: "Food & drink (the van cooks half the nights)", pp: 635 },
+    { cat: "Lodge nights × 8 (7 boutique picks + the airport landing night)", pp: 670 },
+    { cat: "Fuel · 2,730 km diesel (2,925 incl. side trips)", pp: 145 },
+    { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670 },
     { cat: "Activities — dolphins, dark sky, Milford, heli, whales…", pp: 695 },
     { cat: "Travel insurance & misc", pp: 185 },
   ],
@@ -547,10 +576,11 @@ const BUDGET = {
 
 /* ---------- booking checklist (in order) ---------- */
 const CHECKLIST = [
-  { when: "Book NOW", what: "Flights — Cathay Pacific AMS ⇄ Christchurch, 3–22 Nov", why: "€1,293 pp quoted and below the old €1,400 anchor. Cathay's HKG–CHC leg is seasonal and runs only 3× weekly in November — small fixed inventory in the opening weeks of the season", price: "€1,293 pp · €2,585 total", link: "https://www.skyscanner.net/transport/flights/ams/chc/261103/261121/?adults=2&cabinclass=economy" },
+  { when: "DONE ✓", what: "Flights — China Southern AMS ⇄ Christchurch, 2–22 Nov", why: "Booked and confirmed for two. Land CHC Wed 4 Nov 17:20, fly home Sat 21 Nov 22:30. Everything else on this list is dated off those two times — including the airport hotel below, which exists only because the 17:20 arrival lands after the camper depot shuts", price: "€1,162 pp · €2,323 total", link: "https://www.csair.com/en/" },
+  { when: "Book NOW", what: "Airport hotel for the landing night (4 Nov) — new, and required", why: "CZ617 lands 17:20; the Britz/Maui depot closes 16:30 with the last airport shuttle at 16:00, so the van cannot be picked up on arrival day. Sudima and Novotel are both a two-minute walk from the terminal and both are small — a Wednesday in early November is not busy, but book it while you're thinking about it", price: "≈ €140 for two", link: "https://www.sudimahotels.com/hotels/new-zealand/christchurch-airport/" },
   { when: "Book NOW", what: "Cascade Creek DOC campsite (11 Nov) — the release window is THIS MONTH", why: "DOC opens 1 Oct 2026–30 Jun 2027 bookings during August 2026. Check the portal today; book the moment it appears. Henry Creek is the bookable safety net", price: "€18 for two", link: "https://bookings.doc.govt.nz/" },
   { when: "Book NOW", what: "DOC campsites: White Horse Hill (7 Nov) · Moke Lake (12 Nov) · Otto's (16 Nov)", why: "All three confirmed open for booking to 30 Jun 2027. White Horse Hill is DOC's busiest site in the country and no spaces are held for walk-ups", price: "€18–20 /night for two", link: "https://bookings.doc.govt.nz/" },
-  { when: "Book NOW", what: "Campervan — 16 days, certified self-contained (GREEN warrant, in writing)", why: "November is still shoulder season, but every October promo has expired and none of the current THL deals cover a 16-day November hire — so shop it hard across brands", price: "≈ NZ$150–240/day", link: "https://www.motorhomerepublic.com/" },
+  { when: "Book NOW", what: "Campervan — 16 days (5–21 Nov), certified self-contained (GREEN warrant, in writing)", why: "November is still shoulder season, but every October promo has expired and none of the current THL deals cover a 16-day November hire — so shop it hard across brands", price: "≈ NZ$150–240/day", link: "https://www.motorhomerepublic.com/" },
   { when: "Book NOW", what: "Onsen Hot Pools private tub, Queenstown (9 Nov evening)", why: "Confirmed: availability is already released through 31 Dec 2026, and the sunset tubs go first. Nothing is stopping you booking this today", price: "€88 /tub for two", link: "https://www.onsen.co.nz/experiences/original-onsen-soak-only/" },
   { when: "Within days", what: "Franz Josef tree-hut (15 Nov) & Queenstown lodge (9 Nov)", why: "Small room counts — Moonlight Escape has five suites. Confirm the live November rate at booking; the tree hut sits below its December peak but above October", price: "€175 / €200", link: "https://rainforest.nz/room/deluxe-tree-hut/" },
   { when: "Within days", what: "Remaining lodges — Akaroa, Te Anau, Wanaka, Kaikōura, Christchurch", why: "Small boutiques with 2–10 rooms. All five confirmed operating and taking 2026 bookings", price: "€115–194 /night", link: null },
@@ -562,6 +592,7 @@ const CHECKLIST = [
 
 /* ---------- stay finder ---------- */
 const FINDER_PLACES = [
+  { town: "Christchurch Airport", label: "CHC Airport (landing night)", checkin: "2026-11-04", checkout: "2026-11-05" },
   { town: "Akaroa", label: "Akaroa", checkin: "2026-11-05", checkout: "2026-11-06" },
   { town: "Lake Tekapo", label: "Lake Tekapo", checkin: "2026-11-06", checkout: "2026-11-07" },
   { town: "Mount Cook Village", label: "Aoraki / Mt Cook", checkin: "2026-11-07", checkout: "2026-11-09" },
