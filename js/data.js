@@ -20,6 +20,11 @@
    depot closes (16:30), so night 1 is an airport hotel and the
    van is collected on the morning of 5 Nov — meaning every
    moon-, lambing- and whale-dated day below keeps its date.
+
+   v5 (2 Sep 2026) — the CAMPERVAN is BOOKED and paid in full:
+   Mighty Double Up 4-berth, ref NJL282541-1, NZ$7,698.84 incl.
+   the Platinum Pack. thl bills 5–21 Nov as 17 rental days (not
+   the 16 assumed earlier). Budget re-based on the real price.
    ============================================================ */
 
 const TRIP = {
@@ -47,7 +52,7 @@ const NIGHTS = [
     coords: [-43.4876, 172.5374], type: "lodge",
     checkin: "2026-11-04", checkout: "2026-11-05", searchTown: "Christchurch Airport",
     stay: { name: "Sudima Christchurch Airport", price: 140, imgKey: "christchurch2",
-            note: "This night exists because of the booked flight, not because anyone wanted it: CZ617 touches down at 17:20 and the Britz/Maui depot closes at 16:30 (last airport shuttle 16:00), so the van simply cannot be collected today. Sudima is directly across the forecourt from the terminal — a two-minute walk with the trolleys after 32 hours in the air. Sleep, then take the van at 08:00 with a whole clear day ahead. Rate is an indication, not a live check.",
+            note: "This night exists because of the booked flight, not because anyone wanted it: CZ617 touches down at 17:20 and the Mighty (thl) depot on Orchard Road closes at 16:30 (last airport shuttle 16:00), so the van simply cannot be collected today. Sudima is directly across the forecourt from the terminal — a two-minute walk with the trolleys after 32 hours in the air. Sleep, then take the van at 08:00 with a whole clear day ahead. Rate is an indication, not a live check.",
             url: "https://www.sudimahotels.com/hotels/new-zealand/christchurch-airport/" },
     alts: [
       { name: "Novotel Christchurch Airport", kind: "lodge", price: 155, note: "the other walk-across-the-road option, right at the terminal", url: "https://all.accor.com/hotel/8060/index.en.shtml" },
@@ -269,9 +274,9 @@ const DAYS = [
     n: 2, date: "Thu 5 Nov", title: "Touchdown → the French harbour", nightN: 2,
     imgKey: "akaroa", gallery: ["akaroa", "banks_peninsula", "akaroa2"],
     drive: { from: "Christchurch Airport", to: "Akaroa", km: 84, time: "1 h 30 m" },
-    body: "At the depot for eight, slept and on New Zealand time — which is the whole reason last night's hotel exists. Sign for the campervan, allow an hour for the briefing (and get the green self-containment warrant confirmed in writing before you drive off), raid a supermarket for the first few days of van food, and then take the kindest first drive imaginable: 84 km south-east, out across the plains and up over the rim of an extinct volcano, before dropping into Akaroa. New Zealand's only French settlement: rues instead of streets, a pastel harbour, the world's smallest dolphins somewhere out in the bay. You arrive by lunchtime instead of late afternoon, so there's a whole afternoon for the Summit Road and the lighthouse. Sunset isn't until half past eight in November. Moules-frites, because of course. Then sleep — you're in the water at nine.",
+    body: "At the depot for eight — the orange-and-white thl shuttle leaves from outside doors 1–2 at 08:15, or it's a five-minute taxi down Orchard Road — slept and on New Zealand time, which is the whole reason last night's hotel exists. Sign for the Mighty Double Up (booking NJL282541-1, already paid), allow an hour for the briefing (and get the green self-containment warrant confirmed in writing before you drive off), raid a supermarket for the first few days of van food, and then take the kindest first drive imaginable: 84 km south-east, out across the plains and up over the rim of an extinct volcano, before dropping into Akaroa. New Zealand's only French settlement: rues instead of streets, a pastel harbour, the world's smallest dolphins somewhere out in the bay. You arrive by lunchtime instead of late afternoon, so there's a whole afternoon for the Summit Road and the lighthouse. Sunset isn't until half past eight in November. Moules-frites, because of course. Then sleep — you're in the water at nine.",
     acts: [
-      { name: "Pick up campervan, CHC Airport (depot opens 08:00)", price: null, note: "allow 1 h for the briefing" },
+      { name: "Collect the Mighty Double Up — thl depot, 159 Orchard Rd (opens 08:00)", price: null, note: "booking NJL282541-1, paid in full · shuttle from doors 1–2 at 08:15 or a 5-min taxi · allow 1 h for the briefing · check the green warrant is on the windscreen", url: "https://www.mightycampers.com/nz/en/campervan-hire/4-berth-double-up" },
       { name: "Summit Road viewpoints, Banks Peninsula", price: 0 },
       { name: "Akaroa village & lighthouse stroll", price: 0 },
     ],
@@ -453,14 +458,14 @@ const DAYS = [
     n: 18, date: "Sat 21 Nov", title: "A whole last day → home", nightN: null,
     imgKey: "chc_punting", gallery: ["chc_punting", "christchurch", "christchurch2", "banks_peninsula"],
     drive: { from: "Christchurch", to: "Lyttelton / Sumner → CHC Airport", km: 55, time: "1 h 30 m total" },
-    body: "The booked flight's one unambiguous gift: CZ618 doesn't leave until 22:30, so this is a real day, not a scramble to an eleven o'clock van return. Keep the camper — the hire is charged to today either way — and use it. Breakfast, then the Botanic Gardens across the road at their late-November peak, deep in roses. After that you have hours to spend: over the Port Hills to Lyttelton for the Saturday farmers' market and the harbour you looked down on from the Summit Road sixteen days ago, or out to Sumner for fish and chips on the beach and a last look at the Pacific. Back into town mid-afternoon for the tram, the cardboard cathedral and a final flat white on New Regent Street. Then refuel, empty the tanks, and hand the keys back by half four — the depot closes at 16:30 and that is a hard edge, the one piece of timing today that isn't relaxed. Shuttle across, dinner airside, wheels up at half ten. Guangzhou tomorrow morning, Amsterdam at 18:35 tomorrow evening. Kia ora, Te Waipounamu — you were ridiculous.",
+    body: "The booked flight's one unambiguous gift: CZ618 doesn't leave until 22:30, so this is a real day, not a scramble to an eleven o'clock van return. Keep the camper — the hire is charged to today either way — and use it. Breakfast, then the Botanic Gardens across the road at their late-November peak, deep in roses. After that you have hours to spend: over the Port Hills to Lyttelton for the Saturday farmers' market and the harbour you looked down on from the Summit Road sixteen days ago, or out to Sumner for fish and chips on the beach and a last look at the Pacific. Back into town mid-afternoon for the tram, the cardboard cathedral and a final flat white on New Regent Street. Then refuel — the Drop & Go pack in the booking means no tank-emptying and no cleaning, they do it — and hand the keys back by half four; the depot closes at 16:30 and that is a hard edge, the one piece of timing today that isn't relaxed. Aim for half three, though: the last branch-to-terminal shuttle leaves at 16:00, and after that it's a taxi. Dinner airside, wheels up at half ten. Guangzhou tomorrow morning, Amsterdam at 18:35 tomorrow evening. Kia ora, Te Waipounamu — you were ridiculous.",
     acts: [
       { name: "Botanic Gardens", price: 0 },
       { name: "Lyttelton Farmers' Market (Saturdays, 10:00–13:00)", price: 0, url: "https://www.lytteltonfarmersmarket.co.nz/" },
       { name: "Sumner beach + fish & chips", price: 15 },
       { name: "Punting on the Avon (option)", price: 23, url: "https://www.christchurchattractions.nz/punting/",
         alts: [{ name: "tram + gondola + punting day pass", price: 61, url: "https://www.christchurchattractions.nz/packages/" }] },
-      { name: "Refuel + return campervan — HARD deadline 16:30", price: null, must: true },
+      { name: "Refuel + return the Double Up — HARD deadline 16:30", price: null, must: true, note: "Drop & Go included: no emptying, no cleaning. Aim for 15:30 to catch the 16:00 shuttle to the terminal (last one)" },
     ],
   },
 ];
@@ -503,27 +508,18 @@ const POIS = [
 
 /* ---------- the campervan ---------- */
 const CAMPER = {
-  summary: "One certified self-contained 2-berth, Christchurch ↔ Christchurch, 16 days — collected 08:00 Thu 5 Nov, back by 16:30 Sat 21 Nov. (Note the hire did NOT get longer when the flights moved: the 4 Nov arrival lands after the depot closes, so that night is a hotel, and the 21 Nov departure is late enough to keep the van all day. Same 16 rental days, more trip.) November is still officially shoulder season (Sep–Nov) — cheaper than the December–February peak — but it is the last month before rates climb, and the October promo window has closed: THL's ‘500FIVE’ deal expired 24 Jul, and Britz's current ‘every 10th day free’ offer only covers travel to 31 Oct 2026. The 5%-off long-hire deal needs 21+ days, so 16 days misses it too. Assume list price, then beat it with a live comparison quote — real November quotes still tend to land under the sticker rates below.",
-  days: 16,
-  options: [
-    { co: "Britz", model: "Venturer · 2-berth coachbuilt", perDay: 190, pick: "value", pickLabel: "the pick — best value",
-      note: "Confirmed certified self-contained with a fixed built-in toilet AND shower. Fleet ≤ 2.5 yrs, diesel auto, CHC-airport depot. Excess reduction ≈ NZ$65/day or use a standalone excess policy.",
-      url: "https://www.britz.com/nz/en/campervan-hire/2-berth-venturer", imgKey: "van_britz" },
-    { co: "Mighty", model: "Deuce · 2-berth", perDay: 150, pick: "save", pickLabel: "smart save",
-      note: "Same Sprinter-class body as the Britz, 5+ yr-old fleet — the cheapest real shower/toilet motorhome.",
-      url: "https://www.mightycampers.com/nz/en/campervan-hire/2-berth-deuce", imgKey: "van_mighty" },
-    { co: "Maui", model: "Ultima · 2-berth premium", perDay: 240, pick: "comfort", pickLabel: "comfort",
-      note: "Newest fleet, apartment-grade interior, diesel cabin heating — still welcome on cold Mackenzie and Fiordland nights in November.",
-      url: "https://www.maui-rentals.com/motorhome-hire-new-zealand/2-berth-campervan-ultima", imgKey: "van_maui" },
-    { co: "Mad Campers", model: "MAD2+ · 2-berth", perDay: 160, pick: "offgrid", pickLabel: "off-grid boutique",
-      note: "2024+ builds with 300 W solar + lithium + inverter — built for exactly this trip's nine unpowered and DOC nights. Small fleet, book early.",
-      url: "https://www.madcampers.co.nz/mad2plus", imgKey: null },
-    { co: "Spaceships", model: "Beta 2S self-contained", perDay: 95, pick: "budget", pickLabel: "shoestring",
-      note: "Cheapest legal freedom-camper in NZ (fixed toilet, green warrant), petrol so no road-user charges. No shower — pair with holiday-park nights.",
-      url: "https://spaceshipsrentals.co.nz/vehicles/beta-2s-self-contained", imgKey: "van_spaceships" },
-  ],
-  extras: "Budget the real extras: insurance excess reduction NZ$50–70/day (or a standalone excess policy from Belgium at €5–10/day — usually far cheaper), diesel road-user charges NZ$8 per 100 km (≈ NZ$230 for this loop; petrol vans exempt), bedding usually included at the brands above.",
-  compareUrl: "https://www.motorhomerepublic.com/",
+  summary: "Booked and paid in full on 2 Sep 2026: a Mighty Double Up 4-berth, Christchurch Airport ↔ Christchurch Airport, collected from 08:00 Thu 5 Nov and back by 16:30 Sat 21 Nov. Note that thl bills that as 17 rental days (5–21 Nov inclusive), one more than the earlier plan assumed. The Double Up is a 4-berth chosen for space, not headcount: a real shower and toilet, diesel cabin heating for the Mackenzie and Fiordland nights, a permanent double bed over the cab that never has to be folded away, and a rear lounge that stays a lounge. It is 7.55 m long and 3.40 m high — remember the height at petrol-station canopies and the length at DOC sites. Diesel, automatic, AdBlue. NZ$7,698.84 all-in includes the Platinum Pack: Mighty's top cover tier, which brings the standard NZ$5,000 damage liability down to nil (confirm the figure on the rental agreement at pick-up), plus everything you'd otherwise pay for at the counter — the second driver, a linen exchange, extended roadside assistance, the RV essentials kit (chairs, table, heater, toilet chemicals, snow chains on request) and the Drop & Go pack, so the van goes back on 21 Nov without emptying tanks or cleaning. The final balance is NZ$0.",
+  days: 17,
+  booked: {
+    tag: "BOOKED ✓ · paid in full", co: "Mighty", model: "Double Up · 4-berth, shower & toilet", ref: "NJL282541-1",
+    price: "NZ$7,698.84 · ≈ €3,849 for two · €1,925 pp",
+    pickup: "Thu 5 Nov · from 08:00 · Christchurch Airport branch, 159 Orchard Road, Harewood",
+    dropoff: "Sat 21 Nov · by 16:30 · same branch · hours 08:00–16:30, airport shuttles hourly 08:15–16:00",
+    note: "Flex rates: 7 days × NZ$325 (5–11 Nov) + 7 × $390 (12–18 Nov) + 3 × $383 (19–21 Nov) = $6,154 · Platinum Pack 17 × $80 = $1,360 · card fees $184.84 · unlimited km, GST included. Cancellation: free until 5 Sep (61+ days out), NZ$250 from 60 to 31 days, 20% of the rental inside 30 days.",
+    url: "https://www.mightycampers.com/nz/en/campervan-hire/4-berth-double-up", imgKey: "van_mighty_doubleup",
+  },
+  extras: "Still to pay on the ground: diesel (71–75 L tank; a 7.5 m 4-berth drinks roughly 13 L/100 km, so budget ≈ NZ$800 for the 2,925 km loop) and the diesel Road User Charge, collected at return on the kilometres driven — about NZ$8 per 100 km, so roughly NZ$230 for this loop. Nothing else: insurance, second driver, linen, roadside and the return clean are all inside the Platinum Pack.",
+  todo: "Two things before you fly. Online check-in: the booking's expected-arrival field currently says ~11:00 — change it to 08:00 so the van is prepped for when you actually turn up, and add Justine as the second driver. Licences: the terms require a full licence in English or with an accredited English translation, and accept an International Driving Permit as that translation. Belgian licences aren't in English, so get an IDP each from your municipality (a few days, ≈ €20) and carry it with the licence.",
 };
 
 /* ---------- flights ---------- */
@@ -542,7 +538,7 @@ const FLIGHTS = {
 /* ---------- freedom camping rules ---------- */
 const CAMP_RULES = {
   headline: "Freedom camping, legally",
-  body: "Freedom camping in a vehicle is only legal in a CERTIFIED SELF-CONTAINED van — and since 7 June 2026 only the new GREEN warrant counts (fixed plumbed-in toilet; the old blue cards are void). Your November rental must display one — get it confirmed in writing. With it, the South Island opens up: council free spots like Lake Pukaki, DOC sites from €9 pp, and apps that show every legal spot live.",
+  body: "Freedom camping in a vehicle is only legal in a CERTIFIED SELF-CONTAINED van — and since 7 June 2026 only the new GREEN warrant counts (fixed plumbed-in toilet; the old blue cards are void). The booked Double Up has a fixed toilet and shower, so it should carry one — check it's on the windscreen before you drive off. With it, the South Island opens up: council free spots like Lake Pukaki, DOC sites from €9 pp, and apps that show every legal spot live.",
   apps: [
     { name: "CamperMate", url: "https://www.campermate.com/", note: "The essential app — every legal site, toilet & dump station, live" },
     { name: "Rankers Camping NZ", url: "https://camping.rankers.co.nz/", note: "Community reviews of every spot" },
@@ -553,20 +549,20 @@ const CAMP_RULES = {
 
 /* ---------- budget (€ per person) ---------- */
 const BUDGET = {
-  note: "Lodge prices are live Booking.com checks; camp fees, camper rates and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Flights are now the ACTUAL BOOKED China Southern fare — €2,323 for two, €1,162 pp — not an estimate. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim it.",
-  total: 4642, trimmed: 3670, heliUpgrade: 257,
+  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Two lines are now ACTUAL PAID prices, not estimates: the China Southern flights (€2,323 for two) and the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026). The 4-berth came in well above the 2-berth list rates the earlier budget assumed, which is where most of the increase sits. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
+  total: 5662, trimmed: 5200, heliUpgrade: 257,
   rows: [
     { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
-    { cat: "Campervan · 16 days + insurance + road charges", pp: 1015 },
+    { cat: "Campervan · Mighty Double Up 4-berth, 17 days incl. Platinum Pack (BOOKED, paid)", pp: 1925 },
+    { cat: "Diesel road-user charge, collected at return (≈ 2,925 km × NZ$8 /100 km)", pp: 60 },
     { cat: "Camp nights × 9 (one is free)", pp: 100 },
     { cat: "Lodge nights × 8 (7 boutique picks + the airport landing night)", pp: 670 },
-    { cat: "Fuel · 2,730 km diesel (2,925 incl. side trips)", pp: 145 },
+    { cat: "Fuel · 2,925 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 195 },
     { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670 },
     { cat: "Activities — dolphins, dark sky, Milford, heli, whales…", pp: 695 },
     { cat: "Travel insurance & misc", pp: 185 },
   ],
   saveTips: [
-    "Spaceships van instead of Britz: –€512 pp (you lose the onboard shower).",
     "Scenic snow-landing flight → free glacier valley walk: –€193 pp.",
     "Dark Sky Summit tour → the free sky over your Pukaki camp on new-moon eve: –€110 pp.",
     "Dolphin swim → nature cruise: –€60 pp.",
@@ -577,10 +573,11 @@ const BUDGET = {
 /* ---------- booking checklist (in order) ---------- */
 const CHECKLIST = [
   { when: "DONE ✓", what: "Flights — China Southern AMS ⇄ Christchurch, 2–22 Nov", why: "Booked and confirmed for two. Land CHC Wed 4 Nov 17:20, fly home Sat 21 Nov 22:30. Everything else on this list is dated off those two times — including the airport hotel below, which exists only because the 17:20 arrival lands after the camper depot shuts", price: "€1,162 pp · €2,323 total", link: "https://www.csair.com/en/" },
-  { when: "Book NOW", what: "Airport hotel for the landing night (4 Nov) — new, and required", why: "CZ617 lands 17:20; the Britz/Maui depot closes 16:30 with the last airport shuttle at 16:00, so the van cannot be picked up on arrival day. Sudima and Novotel are both a two-minute walk from the terminal and both are small — a Wednesday in early November is not busy, but book it while you're thinking about it", price: "≈ €140 for two", link: "https://www.sudimahotels.com/hotels/new-zealand/christchurch-airport/" },
+  { when: "DONE ✓", what: "Campervan — Mighty Double Up 4-berth, 5–21 Nov (ref NJL282541-1)", why: "Booked and paid in full on 2 Sep 2026: NZ$7,698.84 for 17 rental days including the Platinum Pack (nil-excess cover, second driver, linen exchange, roadside assistance, essentials kit, Drop & Go return). Pick-up Thu 5 Nov from 08:00 and return by 16:30 Sat 21 Nov, both at the Christchurch Airport branch, 159 Orchard Road. Free cancellation ends 5 Sep; NZ$250 until 5 Oct, then 20% of the rental", price: "€1,925 pp · €3,849 total", link: "https://www.mightycampers.com/nz/en/campervan-hire/4-berth-double-up" },
+  { when: "Book NOW", what: "Airport hotel for the landing night (4 Nov) — new, and required", why: "CZ617 lands 17:20; the Mighty (thl) depot closes 16:30 with the last airport shuttle at 16:00, so the van cannot be picked up on arrival day. Sudima and Novotel are both a two-minute walk from the terminal and both are small — a Wednesday in early November is not busy, but book it while you're thinking about it", price: "≈ €140 for two", link: "https://www.sudimahotels.com/hotels/new-zealand/christchurch-airport/" },
   { when: "Book NOW", what: "Cascade Creek DOC campsite (11 Nov) — the release window is THIS MONTH", why: "DOC opens 1 Oct 2026–30 Jun 2027 bookings during August 2026. Check the portal today; book the moment it appears. Henry Creek is the bookable safety net", price: "€18 for two", link: "https://bookings.doc.govt.nz/" },
   { when: "Book NOW", what: "DOC campsites: White Horse Hill (7 Nov) · Moke Lake (12 Nov) · Otto's (16 Nov)", why: "All three confirmed open for booking to 30 Jun 2027. White Horse Hill is DOC's busiest site in the country and no spaces are held for walk-ups", price: "€18–20 /night for two", link: "https://bookings.doc.govt.nz/" },
-  { when: "Book NOW", what: "Campervan — 16 days (5–21 Nov), certified self-contained (GREEN warrant, in writing)", why: "November is still shoulder season, but every October promo has expired and none of the current THL deals cover a 16-day November hire — so shop it hard across brands", price: "≈ NZ$150–240/day", link: "https://www.motorhomerepublic.com/" },
+  { when: "Sep", what: "Mighty online check-in + an International Driving Permit for each driver", why: "The booking's expected-arrival field says ~11:00 — set it to 08:00 so the van is prepped for when you actually arrive, and add the second driver. Mighty's terms need a licence in English or with an accredited English translation and accept an IDP as that translation; Belgian licences aren't in English, so order one each from your municipality (a few days) and carry it with the licence", price: "IDP ≈ €20 each", link: "https://www.mightycampers.com/nz/en" },
   { when: "Book NOW", what: "Onsen Hot Pools private tub, Queenstown (9 Nov evening)", why: "Confirmed: availability is already released through 31 Dec 2026, and the sunset tubs go first. Nothing is stopping you booking this today", price: "€88 /tub for two", link: "https://www.onsen.co.nz/experiences/original-onsen-soak-only/" },
   { when: "Within days", what: "Franz Josef tree-hut (15 Nov) & Queenstown lodge (9 Nov)", why: "Small room counts — Moonlight Escape has five suites. Confirm the live November rate at booking; the tree hut sits below its December peak but above October", price: "€175 / €200", link: "https://rainforest.nz/room/deluxe-tree-hut/" },
   { when: "Within days", what: "Remaining lodges — Akaroa, Te Anau, Wanaka, Kaikōura, Christchurch", why: "Small boutiques with 2–10 rooms. All five confirmed operating and taking 2026 bookings", price: "€115–194 /night", link: null },

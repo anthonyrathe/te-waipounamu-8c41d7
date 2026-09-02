@@ -80,6 +80,7 @@ const IMAGES = {
   van_britz: "https://res.cloudinary.com/thl/image/upload/c_fill,f_auto,q_75,w_1180/v1712192689/rentals/britz/images/Britz%20Venturer_NZ_2155%20(3).jpg",
   van_maui: "https://freedomdestinations.co.uk/wp-content/uploads/ExteriorMauiUltimaNZ.jpg",
   van_mighty: "https://prod-thl-retail.xperience-sites.com/getmedia/3358a140-fb80-4419-8ca6-361884cd5fef/2-Berth-Deuce-Camper-NZ-4.jpg",
+  van_mighty_doubleup: "https://prod-thl-retail.xperience-sites.com/getmedia/120539f9-6f4c-4176-b863-be55a1cb9345/Mighty_Double-Up_NZ-South-Island-34.jpg",
   van_spaceships: "https://spaceshipsrentals.co.nz/assets/Uploads/Beta-self-contained-campervan-5__FocusFillWyIwLjAwIiwiMC4wMCIsOTYwLDU0MF0.jpg",
   van_jucy: "https://cdn.jucy.com/cdn-cgi/image/width=3840,format=auto/https://cdn.jucy.com/cms/Uploads/WillandAlice-Chaser-Milford-NZ-1600x1600.jpg",
   camp_hanmer: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Hanmer_Springs_012.JPG/1920px-Hanmer_Springs_012.JPG", "https://upload.wikimedia.org/wikipedia/commons/0/04/Hanmer_springs_park.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/48/Hanmer_springs_spa.jpg"],

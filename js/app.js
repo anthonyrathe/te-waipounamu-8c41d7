@@ -313,24 +313,24 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
 
 /* ---------- book it: camper ---------- */
 (function camper() {
+  const b = CAMPER.booked;
   $("#bookCamper").innerHTML = `
     <div class="book-card io">
       <h3>🚐 The campervan — ${CAMPER.days} days, CHC ↔ CHC</h3>
-      <p class="sub">certified self-contained (green warrant) — non-negotiable for the free nights</p>
-      <p class="book-extra" style="margin-top:0">${esc(CAMPER.summary)}</p>
-      <div class="van-opts">
-        ${CAMPER.options.map((o) => `
-          <div class="opt">
-            <span class="tag ${o.pick === "value" ? "hot" : ""}">${esc(o.pickLabel)}</span>
-            ${img(o.imgKey) ? `<img src="${img(o.imgKey)}" alt="${esc(o.co)} ${esc(o.model)}" loading="lazy">` : ""}
-            <span class="nm">${esc(o.co)} — ${esc(o.model)}</span>
-            <span class="pr">≈ NZ$${o.perDay} /day · ≈ €${Math.round(o.perDay * 0.5 * CAMPER.days)} total</span>
-            <span class="nt">${esc(o.note)}</span>
-            <a class="btn" href="${o.url}" target="_blank" rel="noopener">quote ↗</a>
-          </div>`).join("")}
+      <p class="sub">${esc(b.co)} ${esc(b.model)} · ref ${esc(b.ref)} · pick-up ${esc(b.pickup)} · return ${esc(b.dropoff)}</p>
+      <div class="van-opts" style="grid-template-columns:minmax(0,520px)">
+        <div class="opt">
+          <span class="tag hot">${esc(b.tag)}</span>
+          ${img(b.imgKey) ? `<img src="${img(b.imgKey)}" alt="${esc(b.co)} ${esc(b.model)}" loading="lazy">` : ""}
+          <span class="nm">${esc(b.co)} — ${esc(b.model)}</span>
+          <span class="pr">${esc(b.price)}</span>
+          <span class="nt">${esc(b.note)}</span>
+          <a class="btn" href="${b.url}" target="_blank" rel="noopener">vehicle page ↗</a>
+        </div>
       </div>
-      <p class="book-extra">${esc(CAMPER.extras)} Compare all of them at once on
-      <a href="${CAMPER.compareUrl}" target="_blank" rel="noopener">Motorhome Republic ↗</a>.</p>
+      <p class="book-extra">${esc(CAMPER.summary)}</p>
+      <p class="book-extra">${esc(CAMPER.extras)}</p>
+      <p class="book-extra">${esc(CAMPER.todo)}</p>
     </div>`;
 })();
 
@@ -377,9 +377,9 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
     { t: "November weather", b: "Late alpine spring: 8–20 °C, ~15 hours of daylight, sunset near 20:45. Snow still possible on the passes; waterfalls still fat with snowmelt. Sandflies are awake in Fiordland — bring repellent." },
     { t: "Driving", b: "Left side, ~80 km/h average in a van. Fuel up before Haast and the Milford Road — no stations for 120 km+." },
     { t: "The green warrant", b: "Blue self-containment cards died 7 June 2026. Confirm in writing the rental carries the green warrant, or the free nights are illegal." },
-    { t: "Booking cadence", b: "Flights DONE (China Southern, €2,323 for two) · airport hotel for the 4 Nov landing night + van now · Onsen now (released to 31 Dec) · DOC White Horse Hill, Moke Lk & Otto's now · Cascade Creek releases during Aug 2026 — check the portal." },
+    { t: "Booking cadence", b: "Flights DONE (China Southern, €2,323 for two) · campervan DONE (Mighty Double Up, NZ$7,698.84, paid 2 Sep) · airport hotel for the 4 Nov landing night now · Onsen now (released to 31 Dec) · DOC White Horse Hill, Moke Lk & Otto's now · Cascade Creek releases during Aug 2026 — check the portal." },
     { t: "Dates that matter", b: "New moon 9 Nov — the loop runs clockwise to put Mt John and the Pukaki free camp on the 6th and 8th. Roy's Peak reopens 11 Nov after lambing. Canterbury Show Week peaks Fri 13 Nov, while you're safely in Otago." },
-    { t: "The two depot deadlines", b: "The camper depot runs 08:00–16:30, last airport shuttle 16:00. That is why the 17:20 arrival on 4 Nov becomes a hotel night, and why the van must be back by 16:30 on 21 Nov even though the flight is not until 22:30. Both edges are hard." },
+    { t: "The two depot deadlines", b: "Mighty's thl depot at 159 Orchard Road runs 08:00–16:30; the airport shuttle is hourly, 08:15 from the terminal to 16:00 from the branch. That is why the 17:20 arrival on 4 Nov becomes a hotel night, and why the van must be back by 16:30 on 21 Nov even though the flight is not until 22:30. Both edges are hard." },
   ].map((n) => `<div class="fnote"><div class="fn-t">${esc(n.t)}</div><div class="fn-b">${esc(n.b)}</div></div>`).join("");
 })();
 
