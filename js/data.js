@@ -1,7 +1,7 @@
 /* ============================================================
    TE WAIPOUNAMU — South Island Grand Loop · data
    Justine & Anthony · 4–21 Nov 2026 · Christchurch round trip
-   Campervan · 9 camp nights / 8 lodge nights
+   Campervan · 8 camp nights / 9 lodge nights
    Money: EUR, 1 NZD ≈ €0.50 · lodging = per night FOR TWO
    Sources: Booking.com live checks (Jun 2026), DOC & operator
    websites (researched 12 Jun 2026; re-verified 19 Jul 2026;
@@ -25,6 +25,13 @@
    Mighty Double Up 4-berth, ref NJL282541-1, NZ$7,698.84 incl.
    the Platinum Pack. thl bills 5–21 Nov as 17 rental days (not
    the 16 assumed earlier). Budget re-based on the real price.
+
+   v6 (30 Sep 2026) — AKAROA DROPPED. Bunker House, Lake Tekapo
+   is BOOKED for 5–7 Nov (2 nights, €2,287 total). Day 2 now
+   drives straight from the depot to Tekapo; day 3 is a whole
+   Tekapo day ending with the Dark Sky tour (still 6 Nov). The
+   French Bay night and the Black Cat dolphin swim are gone.
+   Every date from 7 Nov onward is untouched.
    ============================================================ */
 
 const TRIP = {
@@ -35,9 +42,9 @@ const TRIP = {
   travellers: "Justine & Anthony",
   nights: 17,
   stats: [
-    { value: "2,730", unit: "km", label: "one grand loop, clockwise" },
-    { value: "9", unit: "nights", label: "camped wild & lakeside" },
-    { value: "8", unit: "nights", label: "lodges, incl. the landing night" },
+    { value: "2,580", unit: "km", label: "one grand loop, clockwise" },
+    { value: "8", unit: "nights", label: "camped wild & lakeside" },
+    { value: "9", unit: "nights", label: "lodges, incl. the landing night" },
     { value: "5", unit: "parks", label: "national parks crossed" },
   ],
 };
@@ -61,30 +68,22 @@ const NIGHTS = [
     ],
   },
   {
-    n: 2, date: "Thu 5 Nov", place: "Akaroa", region: "Banks Peninsula",
-    coords: [-43.8035, 172.9683], type: "lodge",
-    checkin: "2026-11-05", checkout: "2026-11-06", searchTown: "Akaroa",
-    stay: { name: "French Bay House", score: 9.7, price: 175, imgKey: "french_bay",
-            note: "1874 Carpenter-Gothic B&B in the heart of the French village — four king rooms, breakfast from their own hens, loaner bicycles. Only 84 km from the airport: the gentlest possible landing after 36 hours in the air.",
-            url: "https://www.booking.com/hotel/nz/french-bay-house.html" },
-    alts: [
-      { name: "Newton Heights B&B", kind: "lodge", price: 150, note: "architect-designed, panoramic harbour views from every room + outdoor spa", url: "https://www.newtonheights.nz/" },
-      { name: "L'abri Boutique B&B", kind: "lodge", price: 165, note: "harbour-view rooms 4 km out, garden-to-table breakfast", url: "https://labri.co.nz/" },
-      { name: "Akaroa TOP 10 Holiday Park", kind: "camp", price: 32, note: "harbour-view terraces if you'd rather start in the van" },
-    ],
+    n: 2, date: "Thu 5 Nov", place: "Lake Tekapo", region: "Mackenzie Basin · Dark Sky Reserve",
+    coords: [-43.9990, 170.4745], type: "lodge",
+    checkin: "2026-11-05", checkout: "2026-11-07", searchTown: "Lake Tekapo",
+    stay: { name: "Bunker House (BOOKED · night 1 of 2)", score: 9.8, price: 1144, imgKey: "tekapo_stars",
+            note: "BOOKED — €2,287 for both nights (5–7 Nov). A two-bedroom, two-bathroom holiday home on Godley Peaks Road with its own hot tub on the terrace, a full kitchen, a washing machine and free parking for the van. Two nights in one place, straight after the long flight, inside the UNESCO Dark Sky Reserve.",
+            url: "https://www.booking.com/hotel/nz/bunker-house.html" },
+    alts: [],
   },
   {
     n: 3, date: "Fri 6 Nov", place: "Lake Tekapo", region: "Mackenzie Basin · Dark Sky Reserve",
-    coords: [-44.0046, 170.4771], type: "camp",
-    checkin: "2026-11-06", checkout: "2026-11-07", searchTown: "Lake Tekapo",
-    stay: { name: "Lakes Edge Holiday Park, Tekapo", price: 30, imgKey: "tekapo",
-            note: "Powered lakeshore site, hot showers, Tekapo Springs next door — and Mt John's observatory road starts ten minutes away. You are sleeping inside the UNESCO Dark Sky Reserve on a night three days before the new moon.",
-            url: "https://lakesedgeholidaypark.co.nz/holiday-park-accommodation/powered-and-non-powered-sites/" },
-    alts: [
-      { name: "Lake McGregor Campground", kind: "camp", price: 10, note: "basic, beautiful, honesty-box cash — 20 min north on the Lilybank road", url: "https://www.mackenzie.govt.nz/services/parks-venues-and-recreation/camping" },
-      { name: "Tekapo TOP 10 Holiday Park", kind: "camp", price: 35, note: "village-edge park, walk to the Church of the Good Shepherd" },
-      { name: "Peppers Bluewater Resort", kind: "lodge", price: 165, note: "if the Dark Sky tour runs late and you want a real bed" },
-    ],
+    coords: [-43.9990, 170.4745], type: "lodge",
+    checkin: "2026-11-05", checkout: "2026-11-07", searchTown: "Lake Tekapo",
+    stay: { name: "Bunker House (BOOKED · night 2 of 2)", score: 9.8, price: 1144, imgKey: "tekapo_stars",
+            note: "Same house, second night, so nothing gets packed today. Mt John's observatory road is a few minutes away, so after the Summit tour you drive back to your own hot tub three nights before the new moon.",
+            url: "https://www.booking.com/hotel/nz/bunker-house.html" },
+    alts: [],
   },
   {
     n: 4, date: "Sat 7 Nov", place: "White Horse Hill", region: "Aoraki / Mt Cook NP",
@@ -271,37 +270,34 @@ const DAYS = [
     ],
   },
   {
-    n: 2, date: "Thu 5 Nov", title: "Touchdown → the French harbour", nightN: 2,
-    imgKey: "akaroa", gallery: ["akaroa", "banks_peninsula", "akaroa2"],
-    drive: { from: "Christchurch Airport", to: "Akaroa", km: 84, time: "1 h 30 m" },
-    body: "At the depot for eight — the orange-and-white thl shuttle leaves from outside doors 1–2 at 08:15, or it's a five-minute taxi down Orchard Road — slept and on New Zealand time, which is the whole reason last night's hotel exists. Sign for the Mighty Double Up (booking NJL282541-1, already paid), allow an hour for the briefing (and get the green self-containment warrant confirmed in writing before you drive off), raid a supermarket for the first few days of van food, and then take the kindest first drive imaginable: 84 km south-east, out across the plains and up over the rim of an extinct volcano, before dropping into Akaroa. New Zealand's only French settlement: rues instead of streets, a pastel harbour, the world's smallest dolphins somewhere out in the bay. You arrive by lunchtime instead of late afternoon, so there's a whole afternoon for the Summit Road and the lighthouse. Sunset isn't until half past eight in November. Moules-frites, because of course. Then sleep — you're in the water at nine.",
+    n: 2, date: "Thu 5 Nov", title: "Depot → straight into the Mackenzie", nightN: 2,
+    imgKey: "tekapo", gallery: ["tekapo", "tekapo2", "tekapo_stars"],
+    drive: { from: "Christchurch Airport", to: "Lake Tekapo", km: 225, time: "3 h" },
+    body: "At the depot for eight. The orange-and-white thl shuttle leaves from outside doors 1–2 at 08:15, or it's a five-minute taxi down Orchard Road, and you arrive rested and on New Zealand time, which is why last night's hotel exists. Sign for the Mighty Double Up (booking NJL282541-1, already paid) and allow an hour for the briefing. Get the green self-containment warrant confirmed in writing before you drive off. Stock up on van food at a supermarket, then head south-west across the Canterbury Plains: cheese in Geraldine, the famous pie at Fairlie Bakehouse, then up over Burkes Pass to the moment the Mackenzie Basin opens out ahead of you. It's three hours of easy, straight road, a gentle first drive in an unfamiliar van. Tekapo by mid-afternoon. Unpack once for two nights, get in the hot tub, and look up once it's dark. Sunset isn't until half past eight.",
     acts: [
       { name: "Collect the Mighty Double Up — thl depot, 159 Orchard Rd (opens 08:00)", price: null, note: "booking NJL282541-1, paid in full · shuttle from doors 1–2 at 08:15 or a 5-min taxi · allow 1 h for the briefing · check the green warrant is on the windscreen", url: "https://www.mightycampers.com/nz/en/campervan-hire/4-berth-double-up" },
-      { name: "Summit Road viewpoints, Banks Peninsula", price: 0 },
-      { name: "Akaroa village & lighthouse stroll", price: 0 },
+      { name: "Fairlie Bakehouse pie stop", price: 7 },
+      { name: "Check in at Bunker House (BOOKED, 2 nights)", price: null, url: "https://www.booking.com/hotel/nz/bunker-house.html" },
     ],
   },
   {
-    n: 3, date: "Fri 6 Nov", title: "Hector's dolphins → the darkest sky", nightN: 3,
-    imgKey: "hectorsdolphin", gallery: ["hectorsdolphin", "akaroa", "tekapo", "tekapo_stars", "mtjohn"],
-    drive: { from: "Akaroa", to: "Lake Tekapo", km: 290, time: "3 h 45 m" },
-    body: "Morning on the water with Black Cat — swim with (or cruise beside) Hector's dolphins, the world's smallest and rarest, found only here. Your dates sit in settled mid-season now rather than the opening fortnight, so boats are running properly. Climb out of the crater by lunchtime and head west: the famous pie at Fairlie Bakehouse, cheese in Geraldine, then up over Burkes Pass and the moment the Mackenzie Basin opens out in front of you. Tekapo by late afternoon. And tonight is the one you rearranged the whole trip for — the Dark Sky Project's summit tour at Mt John observatory, three days out from a new moon, with your campsite ten minutes down the hill.",
+    n: 3, date: "Fri 6 Nov", title: "A whole day at Tekapo → the darkest sky", nightN: 3,
+    imgKey: "mtjohn", gallery: ["mtjohn", "tekapo", "tekapo2", "tekapo_stars"],
+    body: "No driving today. Walk up Mt John by daylight: the summit track through the larch forest takes about an hour and a half from the lakefront, and the Astro Café at the top has probably the best coffee view in the country. Then take the loop down past Lake Alexandrina. Spend the afternoon at Tekapo Springs, or just sit on the terrace of a house you don't have to leave. Tonight is the one you rearranged the whole trip for: the Dark Sky Project's summit tour at the Mt John observatory, three days before a new moon, with your own hot tub a few minutes down the hill afterwards.",
     acts: [
-      { name: "Black Cat — swim with Hector's dolphins", price: 125, must: true, url: "https://www.blackcat.co.nz/swimming-with-dolphins/",
-        alts: [{ name: "harbour nature cruise (no swim)", price: 65, url: "https://www.blackcat.co.nz/akaroa-harbour-nature-cruise/" }, { name: "Pohatu penguins 4WD tour", price: 63, url: "https://www.pohatu.co.nz/Tours/Penguin+Tours.html" }] },
-      { name: "Fairlie Bakehouse pie stop", price: 7 },
+      { name: "Mt John summit walk + Astro Café", price: 0 },
+      { name: "Tekapo Springs hot pools", price: 21, url: "https://tekaposprings.co.nz/our-prices/" },
       { name: "Dark Sky Project — Summit Experience, Mt John", price: 110, must: true, url: "https://www.darkskyproject.co.nz/experiences/the-summit-experience/",
-        alts: [{ name: "Crater Experience (cheaper sibling tour)", price: 65, url: "https://www.darkskyproject.co.nz/experiences/" }, { name: "the sky above your campsite — same Dark Sky Reserve", price: 0 }] },
+        alts: [{ name: "Crater Experience (cheaper sibling tour)", price: 65, url: "https://www.darkskyproject.co.nz/experiences/" }, { name: "the sky above your hot tub, same Dark Sky Reserve", price: 0 }] },
     ],
   },
   {
     n: 4, date: "Sat 7 Nov", title: "Into Aoraki's shadow", nightN: 4,
     imgKey: "mtcook", gallery: ["mtcook", "tekapo2", "pukaki", "mtcook2"],
     drive: { from: "Lake Tekapo", to: "White Horse Hill, Mt Cook", km: 105, time: "1 h 30 m" },
-    body: "A genuinely slow morning for once — the Church of the Good Shepherd before the tour buses, then a long soak at Tekapo Springs looking at the lake you slept beside. The drive west is only ninety minutes, and it contains one of the great pull-over-now moments: SH8 crests, and Lake Pukaki's impossible blue opens up with Aoraki floating at the far end. Turn north on SH80 and follow the water for 55 km into the national park. In mid-November the sun sets close to nine, so golden hour on the Hooker Valley Track starts around seven — three swing bridges to a glacier lake beneath the country's highest mountain. Walk back to the van. You're parked at the trailhead, under Sefton's ice.",
+    body: "Another slow morning: the Church of the Good Shepherd before the tour buses arrive, then check out and go. The drive west is only ninety minutes, and it contains one of the great pull-over-now moments: SH8 crests, and Lake Pukaki's impossible blue opens up with Aoraki floating at the far end. Turn north on SH80 and follow the water for 55 km into the national park. In mid-November the sun sets close to nine, so golden hour on the Hooker Valley Track starts around seven — three swing bridges to a glacier lake beneath the country's highest mountain. Walk back to the van. You're parked at the trailhead, under Sefton's ice.",
     acts: [
       { name: "Church of the Good Shepherd, Tekapo", price: 0 },
-      { name: "Tekapo Springs hot pools", price: 21, url: "https://tekaposprings.co.nz/our-prices/" },
       { name: "Hooker Valley Track (10 km, 3 h, golden hour)", price: 0, must: true },
       { name: "Big Sky Stargazing, the Hermitage (21:30 session)", price: 80, url: "https://www.hermitage.co.nz/experience/big-sky-stargazing/" },
     ],
@@ -472,8 +468,7 @@ const DAYS = [
 
 /* ---------- route geometry (approx. road-following, clockwise) ---------- */
 const LEGS = [
-  { type: "drive", label: "CHC Airport → Akaroa · 84 km", pts: [[-43.4876,172.5374],[-43.5321,172.6362],[-43.62,172.50],[-43.66,172.70],[-43.75,172.85],[-43.8035,172.9683]] },
-  { type: "drive", label: "Akaroa → Lake Tekapo · 290 km", pts: [[-43.8035,172.9683],[-43.75,172.85],[-43.66,172.70],[-43.62,172.50],[-43.75,172.27],[-43.91,171.75],[-44.097,171.245],[-44.099,170.83],[-44.0046,170.4771]] },
+  { type: "drive", label: "CHC Airport → Lake Tekapo · 225 km", pts: [[-43.4876,172.5374],[-43.62,172.30],[-43.75,172.27],[-43.91,171.75],[-44.097,171.245],[-44.099,170.83],[-44.0046,170.4771]] },
   { type: "drive", label: "Tekapo → White Horse Hill, Mt Cook · 105 km", pts: [[-44.0046,170.4771],[-44.05,170.35],[-44.10,170.22],[-44.192,170.157],[-44.1700,170.1200],[-44.06,170.11],[-43.90,170.10],[-43.7180,170.0920]] },
   { type: "daytrip", label: "Tasman Valley → Pukaki Overflow · Day 5", pts: [[-43.7180,170.0920],[-43.7250,170.1650],[-43.7180,170.0920],[-43.90,170.10],[-44.06,170.11],[-44.1700,170.1200]] },
   { type: "drive", label: "Pukaki → Queenstown via Lindis Pass · 270 km", pts: [[-44.1700,170.1200],[-44.255,170.10],[-44.486,169.97],[-44.59,169.64],[-44.86,169.21],[-45.038,169.196],[-45.01,168.93],[-45.0312,168.6626]] },
@@ -549,24 +544,23 @@ const CAMP_RULES = {
 
 /* ---------- budget (€ per person) ---------- */
 const BUDGET = {
-  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Two lines are now ACTUAL PAID prices, not estimates: the China Southern flights (€2,323 for two) and the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026). The 4-berth came in well above the 2-berth list rates the earlier budget assumed, which is where most of the increase sits. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
-  total: 5662, trimmed: 5200, heliUpgrade: 257,
+  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Three lines are now ACTUAL PAID prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026) and Bunker House, Lake Tekapo (€2,287 for two nights, booked 30 Sep 2026; it replaced the Akaroa night and one Tekapo camp night). Bunker House accounts for most of the v6 increase (+€900 pp). 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
+  total: 6565, trimmed: 6160, heliUpgrade: 257,
   rows: [
     { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
     { cat: "Campervan · Mighty Double Up 4-berth, 17 days incl. Platinum Pack (BOOKED, paid)", pp: 1925 },
-    { cat: "Diesel road-user charge, collected at return (≈ 2,925 km × NZ$8 /100 km)", pp: 60 },
-    { cat: "Camp nights × 9 (one is free)", pp: 100 },
-    { cat: "Lodge nights × 8 (7 boutique picks + the airport landing night)", pp: 670 },
-    { cat: "Fuel · 2,925 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 195 },
+    { cat: "Diesel road-user charge, collected at return (≈ 2,775 km × NZ$8 /100 km)", pp: 57 },
+    { cat: "Camp nights × 8 (one is free)", pp: 85 },
+    { cat: "Lodge nights × 9 (Bunker House ×2 BOOKED €1,144 pp, 6 boutique picks, the airport landing night)", pp: 1726 },
+    { cat: "Fuel · 2,775 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 185 },
     { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670 },
-    { cat: "Activities — dolphins, dark sky, Milford, heli, whales…", pp: 695 },
+    { cat: "Activities — dark sky, Milford, heli, whales…", pp: 570 },
     { cat: "Travel insurance & misc", pp: 185 },
   ],
   saveTips: [
     "Scenic snow-landing flight → free glacier valley walk: –€193 pp.",
     "Dark Sky Summit tour → the free sky over your Pukaki camp on new-moon eve: –€110 pp.",
-    "Dolphin swim → nature cruise: –€60 pp.",
-    "Budget lodge alts (Te Awa, Orari, Newton Heights…): –€100 pp.",
+    "Budget lodge alts (Te Awa, Orari…): –€90 pp.",
   ],
 };
 
@@ -574,15 +568,16 @@ const BUDGET = {
 const CHECKLIST = [
   { when: "DONE ✓", what: "Flights — China Southern AMS ⇄ Christchurch, 2–22 Nov", why: "Booked and confirmed for two. Land CHC Wed 4 Nov 17:20, fly home Sat 21 Nov 22:30. Everything else on this list is dated off those two times — including the airport hotel below, which exists only because the 17:20 arrival lands after the camper depot shuts", price: "€1,162 pp · €2,323 total", link: "https://www.csair.com/en/" },
   { when: "DONE ✓", what: "Campervan — Mighty Double Up 4-berth, 5–21 Nov (ref NJL282541-1)", why: "Booked and paid in full on 2 Sep 2026: NZ$7,698.84 for 17 rental days including the Platinum Pack (nil-excess cover, second driver, linen exchange, roadside assistance, essentials kit, Drop & Go return). Pick-up Thu 5 Nov from 08:00 and return by 16:30 Sat 21 Nov, both at the Christchurch Airport branch, 159 Orchard Road. Free cancellation ends 5 Sep; NZ$250 until 5 Oct, then 20% of the rental", price: "€1,925 pp · €3,849 total", link: "https://www.mightycampers.com/nz/en/campervan-hire/4-berth-double-up" },
+  { when: "DONE ✓", what: "Bunker House, Lake Tekapo — 5–7 Nov (2 nights)", why: "Booked on 30 Sep 2026 in place of Akaroa and the Lakes Edge camp night. A 2-bed, 2-bath holiday home with a hot tub, 10 minutes from the Mt John observatory road", price: "€2,287 total", link: "https://www.booking.com/hotel/nz/bunker-house.html" },
   { when: "Book NOW", what: "Airport hotel for the landing night (4 Nov) — new, and required", why: "CZ617 lands 17:20; the Mighty (thl) depot closes 16:30 with the last airport shuttle at 16:00, so the van cannot be picked up on arrival day. Sudima and Novotel are both a two-minute walk from the terminal and both are small — a Wednesday in early November is not busy, but book it while you're thinking about it", price: "≈ €140 for two", link: "https://www.sudimahotels.com/hotels/new-zealand/christchurch-airport/" },
   { when: "Book NOW", what: "Cascade Creek DOC campsite (11 Nov) — the release window is THIS MONTH", why: "DOC opens 1 Oct 2026–30 Jun 2027 bookings during August 2026. Check the portal today; book the moment it appears. Henry Creek is the bookable safety net", price: "€18 for two", link: "https://bookings.doc.govt.nz/" },
   { when: "Book NOW", what: "DOC campsites: White Horse Hill (7 Nov) · Moke Lake (12 Nov) · Otto's (16 Nov)", why: "All three confirmed open for booking to 30 Jun 2027. White Horse Hill is DOC's busiest site in the country and no spaces are held for walk-ups", price: "€18–20 /night for two", link: "https://bookings.doc.govt.nz/" },
   { when: "Sep", what: "Mighty online check-in + an International Driving Permit for each driver", why: "The booking's expected-arrival field says ~11:00 — set it to 08:00 so the van is prepped for when you actually arrive, and add the second driver. Mighty's terms need a licence in English or with an accredited English translation and accept an IDP as that translation; Belgian licences aren't in English, so order one each from your municipality (a few days) and carry it with the licence", price: "IDP ≈ €20 each", link: "https://www.mightycampers.com/nz/en" },
   { when: "Book NOW", what: "Onsen Hot Pools private tub, Queenstown (9 Nov evening)", why: "Confirmed: availability is already released through 31 Dec 2026, and the sunset tubs go first. Nothing is stopping you booking this today", price: "€88 /tub for two", link: "https://www.onsen.co.nz/experiences/original-onsen-soak-only/" },
   { when: "Within days", what: "Franz Josef tree-hut (15 Nov) & Queenstown lodge (9 Nov)", why: "Small room counts — Moonlight Escape has five suites. Confirm the live November rate at booking; the tree hut sits below its December peak but above October", price: "€175 / €200", link: "https://rainforest.nz/room/deluxe-tree-hut/" },
-  { when: "Within days", what: "Remaining lodges — Akaroa, Te Anau, Wanaka, Kaikōura, Christchurch", why: "Small boutiques with 2–10 rooms. All five confirmed operating and taking 2026 bookings", price: "€115–194 /night", link: null },
+  { when: "Within days", what: "Remaining lodges — Te Anau, Wanaka, Kaikōura, Christchurch", why: "Small boutiques with 2–10 rooms. All four confirmed operating and taking 2026 bookings", price: "€115–194 /night", link: null },
   { when: "Aug–Sep", what: "Dark Sky Project Summit Experience, Mt John (6 Nov)", why: "The whole loop was reversed to put this three days before the 9 Nov new moon. NZ$219 is published only to 30 Sep 2026 — reconfirm the November rate when you book", price: "≈ €110 pp", link: "https://www.darkskyproject.co.nz/experiences/the-summit-experience/" },
-  { when: "Aug–Sep", what: "Black Cat dolphin swim (6 Nov) + Milford cruise or kayak (11 Nov)", why: "Swim season runs 1 Oct–30 Apr so you're in settled mid-season, 12 swimmers per boat. Mid-morning small boats at Milford go first", price: "€125 / €76–170 pp", link: "https://www.blackcat.co.nz/swimming-with-dolphins/" },
+  { when: "Aug–Sep", what: "Milford cruise or kayak (11 Nov)", why: "Mid-morning small boats go first", price: "€76–170 pp", link: null },
   { when: "Sep", what: "Franz heli-hike (16 Nov, first slot) + Whale Watch (19 Nov, early afternoon)", why: "Both weather-dependent, both deliberately placed so you have a second morning to retry. November adds a 4th daily whale sailing at 15:30", price: "€193–450 / €88 pp", link: "https://whalewatch.co.nz/" },
   { when: "On the ground", what: "Hanmer pools, Tekapo Springs, gondola, Glacier Explorers, punting", why: "Walk-up or day-before online is fine in November — you're ahead of the December peak and outside school holidays", price: "€10–104", link: null },
 ];
@@ -590,8 +585,7 @@ const CHECKLIST = [
 /* ---------- stay finder ---------- */
 const FINDER_PLACES = [
   { town: "Christchurch Airport", label: "CHC Airport (landing night)", checkin: "2026-11-04", checkout: "2026-11-05" },
-  { town: "Akaroa", label: "Akaroa", checkin: "2026-11-05", checkout: "2026-11-06" },
-  { town: "Lake Tekapo", label: "Lake Tekapo", checkin: "2026-11-06", checkout: "2026-11-07" },
+  { town: "Lake Tekapo", label: "Lake Tekapo (Bunker House booked)", checkin: "2026-11-05", checkout: "2026-11-07" },
   { town: "Mount Cook Village", label: "Aoraki / Mt Cook", checkin: "2026-11-07", checkout: "2026-11-09" },
   { town: "Queenstown", label: "Queenstown (lodge night)", checkin: "2026-11-09", checkout: "2026-11-10" },
   { town: "Te Anau", label: "Te Anau / Milford Road", checkin: "2026-11-10", checkout: "2026-11-12" },
