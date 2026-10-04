@@ -1,7 +1,7 @@
 /* ============================================================
    TE WAIPOUNAMU — South Island Grand Loop · data
    Justine & Anthony · 4–21 Nov 2026 · Christchurch round trip
-   Campervan · 8 camp nights / 9 lodge nights
+   Campervan · 9 camp nights / 8 lodge nights
    Money: EUR, 1 NZD ≈ €0.50 · lodging = per night FOR TWO
    Sources: Booking.com live checks (Jun 2026), DOC & operator
    websites (researched 12 Jun 2026; re-verified 19 Jul 2026;
@@ -42,9 +42,9 @@ const TRIP = {
   travellers: "Justine & Anthony",
   nights: 17,
   stats: [
-    { value: "2,580", unit: "km", label: "one grand loop, clockwise" },
-    { value: "8", unit: "nights", label: "camped wild & lakeside" },
-    { value: "9", unit: "nights", label: "lodges, incl. the landing night" },
+    { value: "2,600", unit: "km", label: "one grand loop, clockwise" },
+    { value: "", count: "camp", unit: "nights", label: "camped wild & lakeside" },   // value derived from NIGHTS in app.js
+    { value: "", count: "lodge", unit: "nights", label: "lodges, incl. the landing night" },
     { value: "5", unit: "parks", label: "national parks crossed" },
   ],
 };
@@ -110,28 +110,28 @@ const NIGHTS = [
     ],
   },
   {
-    n: 6, date: "Mon 9 Nov", place: "Queenstown", region: "Lake Wakatipu",
-    coords: [-45.0312, 168.6626], type: "lodge",
+    n: 6, date: "Mon 9 Nov", place: "Queenstown", region: "Lake Hayes · Wakatipu basin",
+    coords: [-44.9960, 168.8040], type: "lodge",
     checkin: "2026-11-09", checkout: "2026-11-10", searchTown: "Queenstown",
-    stay: { name: "Moonlight Escape Lodge", score: 9.8, price: 200, imgKey: "moonlight_escape",
-            note: "Adults-only hillside lodge above the Shotover with Remarkables views, five suites only — the big-town night, done properly, after four nights in the van.",
-            url: "https://www.moonlightescape.co.nz/" },
+    stay: { name: "Stoneridge Estate (BOOKED)", price: 566, imgKey: "stoneridge",
+            note: "BOOKED on Booking.com for 9–10 Nov, €565.64 for two. A small luxury lodge on a 12-acre boutique vineyard at Lake Hayes (756 SH6), about 15 minutes from central Queenstown and on the Cromwell side of town, so you reach it straight off the Kawarau Gorge road. Only a handful of rooms, a guest lounge with an open fire, a hot tub and lap pool, breakfast with barista coffee, and the estate's own pinot noir. Gourmet dinner by arrangement if you'd rather not drive back into town.",
+            url: "https://stoneridge.co.nz/accommodation/the-lodge/" },
     alts: [
+      { name: "Moonlight Escape Lodge", kind: "lodge", price: 200, score: 9.8, note: "the earlier pick: adults-only hillside lodge above the Shotover, five suites", url: "https://www.moonlightescape.co.nz/" },
       { name: "Kamana Lakehouse", kind: "lodge", price: 195, score: 8.4, note: "highest hotel in town — outdoor hot tubs over Lake Wakatipu", url: "https://kamana.co.nz/" },
-      { name: "Manata Homestead & Lodge", kind: "lodge", price: 150, score: 9.1, note: "garden homestead, gentler price" },
       { name: "Hulbert House", kind: "lodge", price: 534, score: 9.7, note: "full splurge: 1888 villa over the bay" },
     ],
   },
   {
     n: 7, date: "Tue 10 Nov", place: "Te Anau", region: "Fiordland gateway",
-    coords: [-45.4145, 167.7180], type: "lodge",
+    coords: [-45.4145, 167.7180], type: "camp",
     checkin: "2026-11-10", checkout: "2026-11-11", searchTown: "Te Anau",
-    stay: { name: "Blue Thistle Cottages", score: 9.6, price: 150, imgKey: "blue_thistle",
-            note: "Garden cottages with mountain views on the Milford highway — hot shower, real bed, alarm set for Piopiotahi.",
-            url: "https://bluethistlecottages.com/" },
+    stay: { name: "Te Anau TOP 10 Holiday Park", price: 38, imgKey: "camp_teanau",
+            note: "A 5-star park two minutes' walk from the lakefront and the town, with powered sites, hot showers, laundry and a hot tub. It's the first of three camp nights in a row and the only one with any facilities, so charge up, do the washing and refill the water tank tonight; Cascade Creek and Moke Lake after it are basic DOC sites. (~NZ$75 powered for two; confirm the live rate.)",
+            url: "https://top10.co.nz/park/southland/te-anau-top-10-holiday-park/" },
     alts: [
-      { name: "Te Anau Haven", kind: "lodge", price: 111, score: 8.9, note: "budget alt near the lakefront" },
-      { name: "Tasman Holiday Parks Te Anau", kind: "camp", price: 31, note: "lakeside park if you'd rather keep camping" },
+      { name: "Te Anau Lakeview Kiwi Holiday Park", kind: "camp", price: 35, note: "across the road from Lake Te Anau, family-run for 65 years" },
+      { name: "Blue Thistle Cottages", kind: "lodge", price: 150, score: 9.6, note: "the earlier lodge pick: garden cottages on the Milford highway", url: "https://bluethistlecottages.com/" },
     ],
   },
   {
@@ -184,26 +184,26 @@ const NIGHTS = [
     ],
   },
   {
-    n: 12, date: "Sun 15 Nov", place: "Franz Josef / Waiau", region: "Glacier country",
-    coords: [-43.3870, 170.1833], type: "lodge",
+    n: 12, date: "Sun 15 Nov", place: "Lake Mapourika", region: "Westland Tai Poutini NP",
+    coords: [-43.3128, 170.2020], type: "camp",
     checkin: "2026-11-15", checkout: "2026-11-16", searchTown: "Franz Josef",
+    stay: { name: "Otto's / MacDonalds DOC campsite", price: 18, imgKey: "camp_mapourika", doc: true,
+            note: "DOC site on the bush edge of mirror-still Lake Mapourika, 10 minutes past Franz Josef village, so tomorrow's first heli slot is a short drive away. Booking mandatory and open now. Dawn here is absurd.",
+            url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/westland-tai-poutini-national-park/things-to-do/campsites/otto-macdonalds-campsite/" },
+    alts: [
+      { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
+    ],
+  },
+  {
+    n: 13, date: "Mon 16 Nov", place: "Franz Josef / Waiau", region: "Glacier country",
+    coords: [-43.3870, 170.1833], type: "lodge",
+    checkin: "2026-11-16", checkout: "2026-11-17", searchTown: "Franz Josef",
     stay: { name: "Rainforest Retreat — Deluxe Tree Hut", score: 9.0, price: 175, imgKey: "rainforest_treehut",
-            note: "Your pick survives another rewrite: a tree-hut suite in the rainforest canopy, glacier up the road. (Base ~NZ$220–350 shoulder-season — November sits below the December peak, but confirm the live rate at booking.)",
+            note: "A tree-hut suite in the rainforest canopy, glacier up the road, to end the heli-hike day. You're still in the village tomorrow morning if the flight needs its retry. (Base ~NZ$220–350 shoulder-season — November sits below the December peak, but confirm the live rate at booking.)",
             url: "https://rainforest.nz/room/deluxe-tree-hut/" },
     alts: [
       { name: "Te Awa Cottages", kind: "lodge", price: 109, score: 9.2, note: "charming budget alt by the river" },
       { name: "58 On Cron Motel", kind: "lodge", price: 120, score: 8.9, note: "simple, central, spotless" },
-    ],
-  },
-  {
-    n: 13, date: "Mon 16 Nov", place: "Lake Mapourika", region: "Westland Tai Poutini NP",
-    coords: [-43.3128, 170.2020], type: "camp",
-    checkin: "2026-11-16", checkout: "2026-11-17", searchTown: "Franz Josef",
-    stay: { name: "Otto's / MacDonalds DOC campsite", price: 18, imgKey: "camp_mapourika", doc: true,
-            note: "DOC site on the bush edge of mirror-still Lake Mapourika, 15 min north of Franz Josef. Booking mandatory and open now. Dawn here is absurd.",
-            url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/westland-tai-poutini-national-park/things-to-do/campsites/otto-macdonalds-campsite/" },
-    alts: [
-      { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
     ],
   },
   {
@@ -332,7 +332,7 @@ const DAYS = [
     n: 7, date: "Tue 10 Nov", title: "Glenorchy → into Fiordland", nightN: 7,
     imgKey: "glenorchy", gallery: ["glenorchy", "paradise_glenorchy", "teanau"],
     drive: { from: "Queenstown", to: "Te Anau via Glenorchy", km: 300, time: "4 h 15 m total" },
-    body: "Start with one of the world's great drives and then come back down it: the Glenorchy road, 45 minutes of Lake Wakatipu cliff-edge cinema. Photograph the red wharf shed, take a peek up the Dart Valley towards Paradise (Isengard, if you must), then turn south along the Devil's Staircase and run down through Kingston and Lumsden to Te Anau — Fiordland's quiet lakeside base. Early dinner, fuel up tonight rather than tomorrow, alarm set for quarter past six. Tomorrow is the big one.",
+    body: "Start with one of the world's great drives and then come back down it: the Glenorchy road, 45 minutes of Lake Wakatipu cliff-edge cinema. Photograph the red wharf shed, take a peek up the Dart Valley towards Paradise (Isengard, if you must), then turn south along the Devil's Staircase and run down through Kingston and Lumsden to Te Anau — Fiordland's quiet lakeside base, and a powered site at the TOP 10. Showers, laundry and a full battery, early dinner, fuel up tonight rather than tomorrow, alarm set for quarter past six. Tomorrow is the big one.",
     acts: [
       { name: "Glenorchy wharf & lagoon boardwalk", price: 0 },
       { name: "Dart River Funyaks, Glenorchy (full-day splurge option)", price: 258, url: "https://www.dartriver.co.nz/choose-your-experience/funyaks/" },
@@ -385,30 +385,30 @@ const DAYS = [
   {
     n: 12, date: "Sun 15 Nov", title: "Haast Pass → glacier country", nightN: 12,
     imgKey: "bluepools", gallery: ["bluepools", "thundercreek", "haastpass", "lakehawea", "franzjosef"],
-    drive: { from: "Glendhu Bay", to: "Franz Josef", km: 285, time: "4 h 0 m + stops" },
-    body: "The drive that earns the superlatives, run in reverse. North past Lake Hāwea and The Neck where the two great lakes almost touch, then into Haast Pass: the Blue Pools' glacial glass, Fantail Falls, Thunder Creek. Out the western side into rainforest and onto the coast — Ship Creek's dune and swamp-forest walks, surf hammering below Knights Point — then the long green run north to Franz Josef. Tonight is the tree-hut, and after dark the free glowworm forest walk at the edge of the village.",
+    drive: { from: "Glendhu Bay", to: "Lake Mapourika", km: 295, time: "4 h 10 m + stops" },
+    body: "The drive that earns the superlatives, run in reverse. North past Lake Hāwea and The Neck where the two great lakes almost touch, then into Haast Pass: the Blue Pools' glacial glass, Fantail Falls, Thunder Creek. Out the western side into rainforest and onto the coast — Ship Creek's dune and swamp-forest walks, surf hammering below Knights Point — then the long green run north through Franz Josef to Lake Mapourika, ten minutes beyond it. Tonight is a quiet DOC camp on the water: dinner by the lake, an early night, the first heli slot in the morning.",
     acts: [
       { name: "Blue Pools walk (1 h return)", price: 0, must: true },
       { name: "Thunder Creek Falls & Fantail Falls (roadside)", price: 0 },
       { name: "Ship Creek dune & swamp-forest walks", price: 0 },
-      { name: "Glowworm forest walk, Franz Josef (after dark)", price: 0 },
     ],
   },
   {
     n: 13, date: "Mon 16 Nov", title: "Helicopter onto the glacier", nightN: 13,
     imgKey: "franzjosef2", gallery: ["franzjosef2", "franzjosef", "lakematheson", "lakemapourika", "foxglacier"],
-    drive: { from: "Franz Josef", to: "Lake Matheson loop → Lake Mapourika", km: 60, time: "1 h 15 m total" },
-    body: "The big-ticket morning: a heli-hike drops you ON Franz Josef Glacier for up to 2.5 hours among ice caves and blue crevasses — the only way onto the ice now, and the trip's grand splurge. Cheaper plan: a 25-minute scenic flight with a snow landing. Free plan: the valley walk to the terminal face. All of it is weather-dependent with a full refund if cancelled, so take the first slot of the day — and note you have a second shot tomorrow morning before the drive north, which is exactly why the glaciers sit here in the itinerary. Late afternoon, the Lake Matheson mirror loop for the classic reflection of Aoraki and Tasman, then a dead-quiet DOC night on Lake Mapourika.",
+    drive: { from: "Lake Mapourika", to: "Franz Josef → Lake Matheson loop", km: 70, time: "1 h 25 m total" },
+    body: "The big-ticket morning: a heli-hike drops you ON Franz Josef Glacier for up to 2.5 hours among ice caves and blue crevasses — the only way onto the ice now, and the trip's grand splurge. Cheaper plan: a 25-minute scenic flight with a snow landing. Free plan: the valley walk to the terminal face. All of it is weather-dependent with a full refund if cancelled, so take the first slot of the day — and note you have a second shot tomorrow morning before the drive north, which is exactly why the glaciers sit here in the itinerary. Late afternoon, the Lake Matheson mirror loop for the classic reflection of Aoraki and Tasman, then back to the village for a night in the tree hut and, after dark, the free glowworm forest walk.",
     acts: [
       { name: "Franz Josef heli-hike (4 h, 2.5 h on ice)", price: 450, must: true, url: "https://www.franzjosefglacier.com/choose-your-experience/glacier-heli-hike/",
         alts: [{ name: "Scenic heli + snow landing, 25 min", price: 193, url: "https://www.helicopter.co.nz/franz-josef" }, { name: "Fox Glacier ‘Flying Fox’ heli-hike (3 h ice)", price: 398, url: "https://www.foxguides.co.nz/experiences/flying-fox-heli-hike/" }, { name: "Glacier valley walk", price: 0 }] },
       { name: "Lake Matheson mirror loop (1.5 h, golden hour)", price: 0, must: true },
+      { name: "Glowworm forest walk, Franz Josef (after dark)", price: 0 },
     ],
   },
   {
     n: 14, date: "Tue 17 Nov", title: "Hokitika Gorge → the wild coast", nightN: 14,
     imgKey: "hokitikagorge", gallery: ["hokitikagorge", "hokitika", "punakaiki", "punakaiki2", "westcoast"],
-    drive: { from: "Lake Mapourika", to: "Punakaiki", km: 280, time: "4 h 0 m + stops" },
+    drive: { from: "Franz Josef", to: "Punakaiki", km: 290, time: "4 h 10 m + stops" },
     body: "If yesterday's flight blew out, this morning is the retry. Otherwise: north through the rainforest to Hokitika — driftwood-sign beach, greenstone carvers, arguably the best pies on the coast — with an inland detour to Hokitika Gorge, where the water is a turquoise that looks colour-graded (free, 45-minute loop, two swing bridges). Then the coast road north of Greymouth with the Tasman on your left and rainforest cliffs on your right. Time your arrival at Punakaiki for high tide, when the Pancake Rocks blowholes detonate. Paddle the limestone gorge of the Pororari if there's light left — there will be. Camp in the dunes, surf all night.",
     acts: [
       { name: "Hokitika Gorge walk & swing bridges", price: 0, must: true },
@@ -478,9 +478,9 @@ const LEGS = [
   { type: "drive", label: "Cascade Creek → Moke Lake · 250 km", pts: [[-44.8900,168.0600],[-44.97,168.00],[-45.16,167.85],[-45.4145,167.7180],[-45.55,167.95],[-45.67,168.24],[-45.55,168.40],[-45.33,168.71],[-45.13,168.74],[-45.0312,168.6626],[-45.02,168.60],[-45.0044,168.5550]] },
   { type: "drive", label: "Moke Lake → Wanaka via Crown Range · 95 km", pts: [[-45.0044,168.5550],[-45.02,168.60],[-45.0312,168.6626],[-45.02,168.74],[-44.9410,168.8350],[-44.95,168.91],[-44.8746,168.9882],[-44.7032,169.1321]] },
   { type: "drive", label: "Wanaka → Glendhu Bay · 12 km", pts: [[-44.7032,169.1321],[-44.6680,168.9990]] },
-  { type: "drive", label: "Glendhu → Franz Josef via Haast Pass · 285 km", pts: [[-44.6680,168.9990],[-44.7032,169.1321],[-44.61,169.25],[-44.40,169.27],[-44.23,169.23],[-44.158,169.295],[-44.107,169.354],[-44.00,169.10],[-43.881,169.042],[-43.71,169.30],[-43.59,169.59],[-43.3870,170.1833]] },
-  { type: "daytrip", label: "Lake Matheson loop → Lake Mapourika · Day 13", pts: [[-43.3870,170.1833],[-43.4646,170.0176],[-43.4480,169.9640],[-43.4646,170.0176],[-43.3870,170.1833],[-43.3128,170.2020]] },
-  { type: "drive", label: "Mapourika → Punakaiki via Hokitika Gorge · 280 km", pts: [[-43.3128,170.2020],[-43.3870,170.1833],[-43.26,170.36],[-43.10,170.85],[-42.9469,171.0210],[-42.7170,170.9633],[-42.45,171.21],[-42.35,171.25],[-42.1089,171.3372]] },
+  { type: "drive", label: "Glendhu → Lake Mapourika via Haast Pass · 295 km", pts: [[-44.6680,168.9990],[-44.7032,169.1321],[-44.61,169.25],[-44.40,169.27],[-44.23,169.23],[-44.158,169.295],[-44.107,169.354],[-44.00,169.10],[-43.881,169.042],[-43.71,169.30],[-43.59,169.59],[-43.3870,170.1833],[-43.3128,170.2020]] },
+  { type: "daytrip", label: "Mapourika → Franz Josef → Lake Matheson loop · Day 13", pts: [[-43.3128,170.2020],[-43.3870,170.1833],[-43.4646,170.0176],[-43.4480,169.9640],[-43.4646,170.0176],[-43.3870,170.1833]] },
+  { type: "drive", label: "Franz Josef → Punakaiki via Hokitika Gorge · 290 km", pts: [[-43.3870,170.1833],[-43.3128,170.2020],[-43.26,170.36],[-43.10,170.85],[-42.9469,171.0210],[-42.7170,170.9633],[-42.45,171.21],[-42.35,171.25],[-42.1089,171.3372]] },
   { type: "drive", label: "Punakaiki → Hanmer via Lewis Pass · 285 km", pts: [[-42.1089,171.3372],[-42.35,171.25],[-42.45,171.21],[-42.32,171.55],[-42.12,171.86],[-42.33,172.18],[-42.38,172.24],[-42.45,172.40],[-42.55,172.70],[-42.5215,172.8278]] },
   { type: "drive", label: "Hanmer Springs → Kaikōura · 130 km", pts: [[-42.5215,172.8278],[-42.54,172.95],[-42.62,173.10],[-42.55,173.30],[-42.48,173.55],[-42.4008,173.6814]] },
   { type: "drive", label: "Kaikōura → Christchurch · 180 km", pts: [[-42.4008,173.6814],[-42.52,173.51],[-42.75,173.30],[-42.90,173.05],[-43.10,172.75],[-43.32,172.62],[-43.5321,172.6362]] },
@@ -545,14 +545,14 @@ const CAMP_RULES = {
 
 /* ---------- budget (€ per person) ---------- */
 const BUDGET = {
-  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). Three lines are now ACTUAL PAID prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026) and Bunker House, Lake Tekapo (€2,287 for two nights, booked 30 Sep 2026; it replaced the Akaroa night and one Tekapo camp night). Bunker House accounts for most of the v6 increase (+€900 pp). 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
-  total: 6783, trimmed: 6378, heliUpgrade: 257,
+  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). These are ACTUAL BOOKED prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026), Bunker House, Lake Tekapo (€2,287 for two nights, booked 30 Sep 2026; it replaced the Akaroa night and one Tekapo camp night), the Novotel landing night, Manakau PurePod in Kaikōura and Stoneridge Estate in Queenstown (€565.64, booked 4 Oct 2026, +€183 pp over the €200 estimate). Bunker House accounts for most of the v6 increase (+€900 pp). On 4 Oct 2026 the Te Anau night became a camp night (Te Anau TOP 10) and the Franz Josef tree hut moved to 16 Nov, swapping with the Lake Mapourika camp, for an even camp/lodge rhythm after Queenstown: –€56 pp. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
+  total: 6910, trimmed: 6505, heliUpgrade: 257,
   rows: [
     { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
     { cat: "Campervan · Mighty Double Up 4-berth, 17 days incl. Platinum Pack (BOOKED, paid)", pp: 1925 },
     { cat: "Diesel road-user charge, collected at return (≈ 2,775 km × NZ$8 /100 km)", pp: 57 },
-    { cat: "Camp nights × 8 (one is free)", pp: 85 },
-    { cat: "Lodge nights × 9 (BOOKED: Bunker House ×2 €1,144 pp, Novotel €141 pp, Manakau PurePod €243 pp · 5 boutique picks still to book)", pp: 1944 },
+    { cat: "Camp nights × 9 (one is free)", pp: 104 },
+    { cat: "Lodge nights × 8 (BOOKED: Bunker House ×2 €1,144 pp, Novotel €141 pp, Stoneridge Estate €283 pp, Manakau PurePod €243 pp · 3 boutique picks still to book)", pp: 2052 },
     { cat: "Fuel · 2,775 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 185 },
     { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670 },
     { cat: "Activities — dark sky, Milford, heli, whales…", pp: 570 },
@@ -572,12 +572,14 @@ const CHECKLIST = [
   { when: "DONE ✓", what: "Bunker House, Lake Tekapo — 5–7 Nov (2 nights)", why: "Booked on 30 Sep 2026 in place of Akaroa and the Lakes Edge camp night. A 2-bed, 2-bath holiday home with a hot tub, 10 minutes from the Mt John observatory road", price: "€2,287 total", link: "https://www.booking.com/hotel/nz/bunker-house.html" },
   { when: "DONE ✓", what: "Novotel Christchurch Airport — landing night (4–5 Nov)", why: "Booked. CZ617 lands 17:20 and the Mighty (thl) depot closes at 16:30 (last airport shuttle 16:00), so the van can't be picked up on arrival day. The Novotel is a two-minute walk from the terminal", price: "€282.87 for two (paid)", link: "https://www.booking.com/hotel/nz/novotel-christchurch-airport.html" },
   { when: "DONE ✓", what: "Manakau PurePod, Kaikōura (19–20 Nov)", why: "Booked on Airbnb, replacing the Deerbrooke chalet. Off-grid glass cabin in the ranges. Whale Watch is that afternoon, with the next morning as the retry", price: "€486.37 for two", link: null },
+  { when: "DONE ✓", what: "Stoneridge Estate, Queenstown (9–10 Nov)", why: "Booked on Booking.com on 4 Oct 2026, replacing Moonlight Escape. Vineyard lodge at Lake Hayes, 15 minutes from town on the Cromwell side, with a hot tub and breakfast included", price: "€565.64 for two", link: "https://stoneridge.co.nz/accommodation/the-lodge/" },
   { when: "Book NOW", what: "Cascade Creek DOC campsite (11 Nov) — the release window is THIS MONTH", why: "DOC opens 1 Oct 2026–30 Jun 2027 bookings during August 2026. Check the portal today; book the moment it appears. Henry Creek is the bookable safety net", price: "€18 for two", link: "https://bookings.doc.govt.nz/" },
-  { when: "Book NOW", what: "DOC campsites: White Horse Hill (7 Nov) · Moke Lake (12 Nov) · Otto's (16 Nov)", why: "All three confirmed open for booking to 30 Jun 2027. White Horse Hill is DOC's busiest site in the country and no spaces are held for walk-ups", price: "€18–20 /night for two", link: "https://bookings.doc.govt.nz/" },
+  { when: "Book NOW", what: "DOC campsites: White Horse Hill (7 Nov) · Moke Lake (12 Nov) · Otto's (15 Nov)", why: "All three confirmed open for booking to 30 Jun 2027. White Horse Hill is DOC's busiest site in the country and no spaces are held for walk-ups", price: "€18–20 /night for two", link: "https://bookings.doc.govt.nz/" },
   { when: "Sep", what: "Mighty online check-in + an International Driving Permit for each driver", why: "The booking's expected-arrival field says ~11:00 — set it to 08:00 so the van is prepped for when you actually arrive, and add the second driver. Mighty's terms need a licence in English or with an accredited English translation and accept an IDP as that translation; Belgian licences aren't in English, so order one each from your municipality (a few days) and carry it with the licence", price: "IDP ≈ €20 each", link: "https://www.mightycampers.com/nz/en" },
   { when: "Book NOW", what: "Onsen Hot Pools private tub, Queenstown (9 Nov evening)", why: "Confirmed: availability is already released through 31 Dec 2026, and the sunset tubs go first. Nothing is stopping you booking this today", price: "€88 /tub for two", link: "https://www.onsen.co.nz/experiences/original-onsen-soak-only/" },
-  { when: "Within days", what: "Franz Josef tree-hut (15 Nov) & Queenstown lodge (9 Nov)", why: "Small room counts — Moonlight Escape has five suites. Confirm the live November rate at booking; the tree hut sits below its December peak but above October", price: "€175 / €200", link: "https://rainforest.nz/room/deluxe-tree-hut/" },
-  { when: "Within days", what: "Remaining lodges — Te Anau, Wanaka, Christchurch", why: "Small boutiques with 2–10 rooms. All three confirmed operating and taking 2026 bookings", price: "€115–194 /night", link: null },
+  { when: "Within days", what: "Franz Josef tree-hut (16 Nov)", why: "Small room count. Confirm the live November rate at booking; the tree hut sits below its December peak but above October", price: "€175", link: "https://rainforest.nz/room/deluxe-tree-hut/" },
+  { when: "Within days", what: "Remaining lodges — Wanaka, Christchurch", why: "Small boutiques with 2–10 rooms. Both confirmed operating and taking 2026 bookings", price: "€136–175 /night", link: null },
+  { when: "Within days", what: "Te Anau TOP 10 powered site (10 Nov)", why: "The Milford base night, now camped. November is before the summer peak, but Te Anau fills with Milford traffic, so book a powered site rather than turn up", price: "≈ €38 for two", link: "https://top10.co.nz/park/southland/te-anau-top-10-holiday-park/" },
   { when: "Aug–Sep", what: "Dark Sky Project Summit Experience, Mt John (6 Nov)", why: "The whole loop was reversed to put this three days before the 9 Nov new moon. NZ$219 is published only to 30 Sep 2026 — reconfirm the November rate when you book", price: "≈ €110 pp", link: "https://www.darkskyproject.co.nz/experiences/the-summit-experience/" },
   { when: "Aug–Sep", what: "Milford cruise or kayak (11 Nov)", why: "Mid-morning small boats go first", price: "€76–170 pp", link: null },
   { when: "Sep", what: "Franz heli-hike (16 Nov, first slot) + Whale Watch (19 Nov, early afternoon)", why: "Both weather-dependent, both deliberately placed so you have a second morning to retry. November adds a 4th daily whale sailing at 15:30", price: "€193–450 / €88 pp", link: "https://whalewatch.co.nz/" },

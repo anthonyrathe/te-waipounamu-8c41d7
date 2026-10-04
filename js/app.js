@@ -45,8 +45,9 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
 (function hero() {
   const heroUrl = img("hero_nz");
   if (heroUrl) $("#heroImg").style.backgroundImage = `url("${heroUrl}")`;
+  const countOf = (type) => NIGHTS.filter((x) => x.type === type).length;
   $("#heroStats").innerHTML = TRIP.stats.map(
-    (s) => `<div class="hero-stat"><div class="v">${esc(s.value)}<small>${esc(s.unit)}</small></div><div class="l">${esc(s.label)}</div></div>`
+    (s) => `<div class="hero-stat"><div class="v">${esc(s.count ? String(countOf(s.count)) : s.value)}<small>${esc(s.unit)}</small></div><div class="l">${esc(s.label)}</div></div>`
   ).join("");
 })();
 
