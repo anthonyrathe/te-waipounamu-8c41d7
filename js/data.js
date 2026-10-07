@@ -564,13 +564,13 @@ const BUDGET = {
   rows: [
     { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
     { cat: "Campervan · Mighty Double Up 4-berth, 17 days incl. Platinum Pack (BOOKED, paid)", pp: 1925 },
-    { cat: "Diesel road-user charge, collected at return (≈ 2,840 km × NZ$8 /100 km)", pp: 57 },
+    { cat: "Diesel road-user charge, collected at return (≈ 2,840 km × NZ$8 /100 km)", pp: 57, defaultOff: true },
     { cat: "Camp nights × 9 (one is free)", pp: 96 },
     { cat: "Lodge nights × 6 (BOOKED: Novotel €141 pp, Stoneridge Estate €283 pp, Manakau PurePod €243 pp, The Observatory €162 pp, Limetree Lodge €114 pp, Franz Josef Lake House €297 pp · all lodges booked · Bunker House ×2 is a gift, not counted)", pp: 1238 },
-    { cat: "Fuel · 2,840 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 189 },
-    { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670 },
+    { cat: "Fuel · 2,840 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 189, defaultOff: true },
+    { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670, defaultOff: true },
     { cat: "Activities — dark sky, Milford, heli, whales…", pp: 570 },
-    { cat: "Travel insurance & misc", pp: 185 },
+    { cat: "Travel insurance & misc", pp: 185, defaultOff: true },
   ],
   saveTips: [
     "Scenic snow-landing flight → free glacier valley walk: –€193 pp.",

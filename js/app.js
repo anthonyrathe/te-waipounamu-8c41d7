@@ -354,26 +354,64 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
 (function budget() {
   $("#budgetNote").textContent = BUDGET.note;
   const max = Math.max(...BUDGET.rows.map((r) => r.pp));
+  // Each row can be toggled out of the total; the choice is a per-viewer convenience kept in localStorage.
+  const rowKey = (r) => r.cat.split(/ [(·]/)[0].trim();
+  const STORE = "tw-budget-excluded";
+  // Running costs (fuel, road-user charge, food, insurance) start unticked; a viewer's own choice overrides that.
+  let excluded = new Set(BUDGET.rows.filter((r) => r.defaultOff).map(rowKey));
+  try {
+    const saved = localStorage.getItem(STORE);
+    if (saved !== null) excluded = new Set(JSON.parse(saved));
+  } catch (e) { /* storage unavailable */ }
+  const trimSaving = BUDGET.total - BUDGET.trimmed;   // the save tips trim the activities row
+  const eurN = (n) => `€${n.toLocaleString("en")}`;
+
   $("#budgetRoot").innerHTML = `
     <div class="budget-rows">
-      ${BUDGET.rows.map((r) => `
-        <div class="brow io">
-          <div class="brow-top"><span class="cat">${esc(r.cat)}</span><span class="val">€${r.pp.toLocaleString("en")} pp</span></div>
+      ${BUDGET.rows.map((r, i) => `
+        <label class="brow io${excluded.has(rowKey(r)) ? " off" : ""}" data-i="${i}">
+          <div class="brow-top">
+            <span class="cat"><input type="checkbox" class="brow-check"${excluded.has(rowKey(r)) ? "" : " checked"} aria-label="count in total">${esc(r.cat)}</span>
+            <span class="val">€${r.pp.toLocaleString("en")} pp</span>
+          </div>
           <div class="bar"><div class="fill" data-w="${(r.pp / max) * 100}"></div></div>
-        </div>`).join("")}
+        </label>`).join("")}
+      <p class="brow-hint">Untick a line to leave it out of the total.</p>
     </div>
     <aside class="budget-side io">
       <div class="budget-total">
-        <div class="t-label">all-in, per person</div>
-        <div class="t-value">€${BUDGET.total.toLocaleString("en")}<small> /pp</small></div>
-        <div class="t-note">full premium programme · €${(BUDGET.total * 2).toLocaleString("en")} for two ·
+        <div class="t-label" id="bTotalLabel">all-in, per person</div>
+        <div class="t-value"><span id="bTotal"></span><small> /pp</small></div>
+        <div class="t-note"><span id="bTotalNote"></span> · <span id="bTwo"></span> for two ·
           heli-hike upgrade +€${BUDGET.heliUpgrade} pp</div>
       </div>
       <div class="save-tips">
-        <h4>trim it back to ≈ €${BUDGET.trimmed.toLocaleString("en")}</h4>
+        <h4 id="bTrim"></h4>
         <ul>${BUDGET.saveTips.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
       </div>
     </aside>`;
+
+  const update = () => {
+    const incl = BUDGET.rows.filter((r) => !excluded.has(rowKey(r)));
+    const total = incl.reduce((sum, r) => sum + r.pp, 0);
+    const activitiesIn = incl.some((r) => /^Activities/.test(r.cat));
+    const n = BUDGET.rows.length - incl.length;
+    $("#bTotal").textContent = eurN(total);
+    $("#bTwo").textContent = eurN(total * 2);
+    $("#bTotalLabel").textContent = n ? "selected items, per person" : "all-in, per person";
+    $("#bTotalNote").textContent = n ? `${n} line${n > 1 ? "s" : ""} left out (all-in ${eurN(BUDGET.total)})` : "full premium programme";
+    $("#bTrim").textContent = activitiesIn ? `trim it back to ≈ ${eurN(total - trimSaving)}` : "trim tips (activities line is left out)";
+  };
+  document.querySelectorAll("#budgetRoot .brow").forEach((el) => {
+    const r = BUDGET.rows[+el.dataset.i];
+    el.querySelector(".brow-check").addEventListener("change", (ev) => {
+      ev.target.checked ? excluded.delete(rowKey(r)) : excluded.add(rowKey(r));
+      el.classList.toggle("off", !ev.target.checked);
+      try { localStorage.setItem(STORE, JSON.stringify([...excluded])); } catch (e) { /* storage unavailable */ }
+      update();
+    });
+  });
+  update();
 })();
 
 /* ---------- footer notes ---------- */
