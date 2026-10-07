@@ -63,6 +63,7 @@ const IMAGES = {
   purepod_manakau: "https://a0.muscache.com/im/pictures/hosting/Hosting-16841356/original/76b9a287-f31c-473a-9cc3-972bbcc2af9d.jpeg?im_w=1200",
   deerbrooke: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/559420270.jpg?k=cb8532d455d1d7db79d1d297ee6bb28539711897bbca0f4ce6cc57377debb360&o=&hp=1",
   rainforest_treehut: "https://rainforest.nz/wp-content/uploads/2020/05/rainforest_deluxe_tree_hut-4.jpg",
+  lakehouse_fj: "https://a0.muscache.com/im/pictures/miso/Hosting-1263907835806140596/original/99a94c95-484e-4caa-8dea-7fc9f5218c4d.jpeg?im_w=1200",
   limetree: "https://new.foxyms.co.nz/files/limetreelodge/resources/cache/1300x819/0/page/processed/AerialZ-ZPoolsideZandZGazeboZweb.jpg",
   black_diamond: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/825790072.jpg?k=eebd5237a03ae179615c1552445f700b91fb663a18d9c429a046aea8b8ab6257&o=",
   blue_thistle: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/e9/13/d9/caption.jpg?w=2400&h=2400&s=1",
