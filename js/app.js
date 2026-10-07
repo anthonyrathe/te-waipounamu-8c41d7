@@ -309,7 +309,7 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
             <span class="nm">${esc(o.name)}</span>
             <span class="pr">${esc(o.price)}</span>
             <span class="nt">${esc(o.note)}</span>
-            <a class="btn" href="${o.url}" target="_blank" rel="noopener">search ↗</a>
+            ${o.url ? `<a class="btn" href="${o.url}" target="_blank" rel="noopener">${/BOOKED/.test(o.tag) ? "site ↗" : "search ↗"}</a>` : ""}
           </div>`).join("")}
       </div>
       <p class="book-extra">${esc(FLIGHTS.advice)}</p>
