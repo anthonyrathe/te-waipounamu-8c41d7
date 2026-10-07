@@ -279,6 +279,7 @@ img { display: block; max-width: 100%; }
 .tonight-meta { font-family: var(--mono); font-size: 0.68rem; color: var(--cream-dim); margin: 0.3rem 0 0.4rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
 .tonight-meta .price { color: var(--cream); font-weight: 600; }
 .tonight-meta .free-badge { color: var(--ink); background: var(--free); border-radius: 4px; padding: 0 0.4rem; font-weight: 600; }
+.tonight-meta .gift-badge { color: var(--ink); background: var(--amber); border-radius: 4px; padding: 0 0.4rem; font-weight: 600; }
 .tonight-meta .score { color: var(--amber); }
 .tonight-note { font-size: 0.8rem; color: rgba(236,229,212,0.78); line-height: 1.55; }
 .tonight-links { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.7rem; }

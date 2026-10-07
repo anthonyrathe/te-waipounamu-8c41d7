@@ -105,6 +105,8 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
     });
     const stayLine = nt.stay.free
       ? `${esc(nt.stay.name)} · <b style="color:#8fd14f">FREE</b>`
+      : nt.stay.gift
+      ? `${esc(nt.stay.name)} · 🎁 ${esc(nt.stay.gift)}`
       : `${esc(nt.stay.name)} · €${nt.stay.price}/night`;
     L.marker(nt.coords, { icon }).addTo(map).bindPopup(
       `<div class="pp-m">night ${nt.n} · ${esc(nt.date)} · ${nt.type === "camp" ? "⛺ camp" : "🏡 lodge"}</div>
@@ -156,7 +158,9 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
       const s = night.stay;
       const thumb = img(s.imgKey);
       const meta = [
-        s.free ? `<span class="free-badge">FREE — self-contained only</span>` : `<span class="price">${eur(s.price)} / night for two</span>`,
+        s.free ? `<span class="free-badge">FREE — self-contained only</span>`
+          : s.gift ? `<span class="gift-badge">🎁 ${esc(s.gift)}</span>`
+          : `<span class="price">${eur(s.price)} / night for two</span>`,
         s.score ? `<span class="score">★ ${s.score}</span>` : "",
         s.doc ? `<span>DOC site</span>` : "",
       ].filter(Boolean).join("");

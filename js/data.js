@@ -27,7 +27,7 @@
    the 16 assumed earlier). Budget re-based on the real price.
 
    v6 (30 Sep 2026) — AKAROA DROPPED. Bunker House, Lake Tekapo
-   is BOOKED for 5–7 Nov (2 nights, €2,287 total). Day 2 now
+   is BOOKED for 5–7 Nov (2 nights, a gift from Anthony). Day 2 now
    drives straight from the depot to Tekapo; day 3 is a whole
    Tekapo day ending with the Dark Sky tour (still 6 Nov). The
    French Bay night and the Black Cat dolphin swim are gone.
@@ -78,8 +78,8 @@ const NIGHTS = [
     n: 2, date: "Thu 5 Nov", place: "Lake Tekapo", region: "Mackenzie Basin · Dark Sky Reserve",
     coords: [-43.9990, 170.4745], type: "lodge",
     checkin: "2026-11-05", checkout: "2026-11-07", searchTown: "Lake Tekapo",
-    stay: { name: "Bunker House (BOOKED · night 1 of 2)", score: 9.8, price: 1144, imgKey: "tekapo_stars",
-            note: "BOOKED — €2,287 for both nights (5–7 Nov). A two-bedroom, two-bathroom holiday home on Godley Peaks Road with its own hot tub on the terrace, a full kitchen, a washing machine and free parking for the van. Two nights in one place, straight after the long flight, inside the UNESCO Dark Sky Reserve. This is the honeymoon splurge.",
+    stay: { name: "Bunker House (BOOKED · night 1 of 2)", score: 9.8, price: null, gift: "A gift from Anthony", imgKey: "tekapo_stars",
+            note: "BOOKED for both nights (5–7 Nov), a gift from Anthony. A two-bedroom, two-bathroom holiday home on Godley Peaks Road with its own hot tub on the terrace, a full kitchen, a washing machine and free parking for the van. Two nights in one place, straight after the long flight, inside the UNESCO Dark Sky Reserve. The honeymoon gift.",
             url: "https://www.booking.com/hotel/nz/bunker-house.html" },
     alts: [],
   },
@@ -87,7 +87,7 @@ const NIGHTS = [
     n: 3, date: "Fri 6 Nov", place: "Lake Tekapo", region: "Mackenzie Basin · Dark Sky Reserve",
     coords: [-43.9990, 170.4745], type: "lodge",
     checkin: "2026-11-05", checkout: "2026-11-07", searchTown: "Lake Tekapo",
-    stay: { name: "Bunker House (BOOKED · night 2 of 2)", score: 9.8, price: 1144, imgKey: "tekapo_stars",
+    stay: { name: "Bunker House (BOOKED · night 2 of 2)", score: 9.8, price: null, gift: "A gift from Anthony", imgKey: "tekapo_stars",
             note: "Same house, second night, so nothing gets packed today. Mt John's observatory road is a few minutes away, so after the Summit tour you drive back to your own hot tub three nights before the new moon.",
             url: "https://www.booking.com/hotel/nz/bunker-house.html" },
     alts: [],
@@ -559,14 +559,14 @@ const CAMP_RULES = {
 
 /* ---------- budget (€ per person) ---------- */
 const BUDGET = {
-  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). These are ACTUAL BOOKED prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026), Bunker House, Lake Tekapo (€2,287 for two nights, booked 30 Sep 2026; it replaced the Akaroa night and one Tekapo camp night), the Novotel landing night, Manakau PurePod in Kaikōura, Stoneridge Estate in Queenstown (€565.64, booked 4 Oct 2026, +€183 pp over the €200 estimate), The Observatory Hotel in Christchurch (€324, booked 6 Oct 2026, +€75 pp over the €175 estimate) Limetree Lodge in Wanaka (€227, booked 7 Oct 2026, +€46 pp over the €136 estimate) and the Franz Josef Lake House on Airbnb (€593.02 for 17–18 Nov, booked 7 Oct 2026, +€209 pp over the €175 tree-hut estimate; Otto's became two nights and the Hanmer camp night was dropped, –€8 pp; +70 km for the Ōkārito day). Bunker House accounts for most of the v6 increase (+€900 pp). On 4 Oct 2026 the Te Anau night became a camp night (Te Anau TOP 10) and the Franz Josef tree hut moved to 16 Nov, swapping with the Lake Mapourika camp, for an even camp/lodge rhythm after Queenstown: –€56 pp. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
-  total: 7236, trimmed: 6921, heliUpgrade: 257,
+  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). These are ACTUAL BOOKED prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026), the Novotel landing night, Manakau PurePod in Kaikōura, Stoneridge Estate in Queenstown (€565.64, booked 4 Oct 2026, +€183 pp over the €200 estimate), The Observatory Hotel in Christchurch (€324, booked 6 Oct 2026, +€75 pp over the €175 estimate), Limetree Lodge in Wanaka (€227, booked 7 Oct 2026, +€46 pp over the €136 estimate) and the Franz Josef Lake House on Airbnb (€593.02 for 17–18 Nov, booked 7 Oct 2026, +€209 pp over the €175 tree-hut estimate; Otto's became two nights and the Hanmer camp night was dropped, –€8 pp; +70 km for the Ōkārito day). Bunker House, Lake Tekapo (5–7 Nov, booked 30 Sep 2026) is a gift from Anthony and is left out of this overview. On 4 Oct 2026 the Te Anau night became a camp night (Te Anau TOP 10) and the Franz Josef tree hut moved to 16 Nov, swapping with the Lake Mapourika camp, for an even camp/lodge rhythm after Queenstown: –€56 pp. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
+  total: 6092, trimmed: 5777, heliUpgrade: 257,
   rows: [
     { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
     { cat: "Campervan · Mighty Double Up 4-berth, 17 days incl. Platinum Pack (BOOKED, paid)", pp: 1925 },
     { cat: "Diesel road-user charge, collected at return (≈ 2,840 km × NZ$8 /100 km)", pp: 57 },
     { cat: "Camp nights × 9 (one is free)", pp: 96 },
-    { cat: "Lodge nights × 8 (BOOKED: Bunker House ×2 €1,144 pp, Novotel €141 pp, Stoneridge Estate €283 pp, Manakau PurePod €243 pp, The Observatory €162 pp, Limetree Lodge €114 pp, Franz Josef Lake House €297 pp · all lodges booked)", pp: 2382 },
+    { cat: "Lodge nights × 6 (BOOKED: Novotel €141 pp, Stoneridge Estate €283 pp, Manakau PurePod €243 pp, The Observatory €162 pp, Limetree Lodge €114 pp, Franz Josef Lake House €297 pp · all lodges booked · Bunker House ×2 is a gift, not counted)", pp: 1238 },
     { cat: "Fuel · 2,840 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 189 },
     { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670 },
     { cat: "Activities — dark sky, Milford, heli, whales…", pp: 570 },
@@ -582,7 +582,7 @@ const BUDGET = {
 const CHECKLIST = [
   { when: "DONE ✓", what: "Flights — China Southern AMS ⇄ Christchurch, 2–22 Nov", why: "Booked and confirmed for two. Land CHC Wed 4 Nov 17:20, fly home Sat 21 Nov 22:30. Everything else on this list is dated off those two times — including the airport hotel below, which exists only because the 17:20 arrival lands after the camper depot shuts", price: "€1,162 pp · €2,323 total", link: "https://www.csair.com/en/" },
   { when: "DONE ✓", what: "Campervan — Mighty Double Up 4-berth, 5–21 Nov (ref NJL282541-1)", why: "Booked and paid in full on 2 Sep 2026: NZ$7,698.84 for 17 rental days including the Platinum Pack (nil-excess cover, second driver, linen exchange, roadside assistance, essentials kit, Drop & Go return). Pick-up Thu 5 Nov from 08:00 and return by 16:30 Sat 21 Nov, both at the Christchurch Airport branch, 159 Orchard Road. Free cancellation ends 5 Sep; NZ$250 until 5 Oct, then 20% of the rental", price: "€1,925 pp · €3,849 total", link: "https://www.mightycampers.com/nz/en/campervan-hire/4-berth-double-up" },
-  { when: "DONE ✓", what: "Bunker House, Lake Tekapo — 5–7 Nov (2 nights)", why: "Booked on 30 Sep 2026 in place of Akaroa and the Lakes Edge camp night. A 2-bed, 2-bath holiday home with a hot tub, 10 minutes from the Mt John observatory road", price: "€2,287 total", link: "https://www.booking.com/hotel/nz/bunker-house.html" },
+  { when: "DONE ✓", what: "Bunker House, Lake Tekapo — 5–7 Nov (2 nights)", why: "Booked on 30 Sep 2026 in place of Akaroa and the Lakes Edge camp night. A 2-bed, 2-bath holiday home with a hot tub, 10 minutes from the Mt John observatory road", price: "🎁 gift from Anthony", link: "https://www.booking.com/hotel/nz/bunker-house.html" },
   { when: "DONE ✓", what: "Novotel Christchurch Airport — landing night (4–5 Nov)", why: "Booked. CZ617 lands 17:20 and the Mighty (thl) depot closes at 16:30 (last airport shuttle 16:00), so the van can't be picked up on arrival day. The Novotel is a two-minute walk from the terminal", price: "€282.87 for two (paid)", link: "https://www.booking.com/hotel/nz/novotel-christchurch-airport.html" },
   { when: "DONE ✓", what: "Manakau PurePod, Kaikōura (19–20 Nov)", why: "Booked on Airbnb, replacing the Deerbrooke chalet. Off-grid glass cabin in the ranges. You arrive late afternoon after the Lewis Pass drive; Whale Watch is the next morning", price: "€486.37 for two", link: null },
   { when: "DONE ✓", what: "The Observatory Hotel, Christchurch (20–21 Nov)", why: "Booked on Booking.com on 6 Oct 2026. Boutique hotel inside the Arts Centre, across the road from the Botanic Gardens, for the last night before the van goes back", price: "€324 for two", link: "https://www.booking.com/hotel/nz/the-observatory-christchurch.html" },
