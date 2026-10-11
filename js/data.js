@@ -36,7 +36,7 @@
    7 Oct 2026 — GLACIER COUNTRY GETS A SECOND DAY. The Franz Josef
    lodge is the Lake House (Airbnb, BOOKED 17–18 Nov). Otto's is now
    two nights (15–16 Nov), the heli-hike keeps 16 Nov with retry
-   mornings on 17 and 18 Nov, Punakaiki moves to 18 Nov and the
+   mornings on 17 and 18 Nov (11 Oct: BOOKED at Fox Glacier, 11:50), Punakaiki moves to 18 Nov and the
    Hanmer camp night is dropped: 19 Nov is a slow Lewis Pass drive
    (Hanmer pools as a stop) to the PurePod, whales the next morning.
    ============================================================ */
@@ -196,7 +196,7 @@ const NIGHTS = [
     coords: [-43.3128, 170.2020], type: "camp",
     checkin: "2026-11-15", checkout: "2026-11-16", searchTown: "Franz Josef",
     stay: { name: "Otto's / MacDonalds DOC campsite (BOOKED · night 1 of 2)", price: 18, imgKey: "camp_mapourika", doc: true,
-            note: "DOC site on the bush edge of mirror-still Lake Mapourika, 10 minutes past Franz Josef village, so tomorrow's first heli slot is a short drive away. BOOKED on the DOC portal for both nights (15–17 Nov): Otto's Corner, site 69, an unpowered large-vehicle pitch, NZ$72 for two. Check-in from 14:00, check-out by 10:00 on 17 Nov. Pitch once, wake on the lake twice. Dawn here is absurd.",
+            note: "DOC site on the bush edge of mirror-still Lake Mapourika, 10 minutes past Franz Josef village and about 40 minutes from Fox Glacier, where tomorrow's heli-hike lifts off at 11:50, so the morning is unhurried. BOOKED on the DOC portal for both nights (15–17 Nov): Otto's Corner, site 69, an unpowered large-vehicle pitch, NZ$72 for two. Check-in from 14:00, check-out by 10:00 on 17 Nov. Pitch once, wake on the lake twice. Dawn here is absurd.",
             url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/westland-tai-poutini-national-park/things-to-do/campsites/otto-macdonalds-campsite/" },
     alts: [
       { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
@@ -210,7 +210,7 @@ const NIGHTS = [
             note: "Same pitch (site 69), second night, so after the heli day there's nothing to set up. Out by 10:00 tomorrow; the Lake House is only minutes away.",
             url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/westland-tai-poutini-national-park/things-to-do/campsites/otto-macdonalds-campsite/" },
     alts: [
-      { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village, a walk from the heli base", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
+      { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
     ],
   },
   {
@@ -393,7 +393,7 @@ const DAYS = [
     n: 12, date: "Sun 15 Nov", title: "Haast Pass → glacier country", nightN: 12,
     imgKey: "bluepools", gallery: ["bluepools", "thundercreek", "haastpass", "lakehawea", "franzjosef"],
     drive: { from: "Glendhu Bay", to: "Lake Mapourika", km: 295, time: "4 h 10 m + stops" },
-    body: "The drive that earns the superlatives, run in reverse. North past Lake Hāwea and The Neck where the two great lakes almost touch, then into Haast Pass: the Blue Pools' glacial glass, Fantail Falls, Thunder Creek. Out the western side into rainforest and onto the coast — Ship Creek's dune and swamp-forest walks, surf hammering below Knights Point — then the long green run north through Franz Josef to Lake Mapourika, ten minutes beyond it. Tonight is a quiet DOC camp on the water: dinner by the lake, an early night, the first heli slot in the morning.",
+    body: "The drive that earns the superlatives, run in reverse. North past Lake Hāwea and The Neck where the two great lakes almost touch, then into Haast Pass: the Blue Pools' glacial glass, Fantail Falls, Thunder Creek. Out the western side into rainforest and onto the coast — Ship Creek's dune and swamp-forest walks, surf hammering below Knights Point — then the long green run north through Franz Josef to Lake Mapourika, ten minutes beyond it. Tonight is a quiet DOC camp on the water: dinner by the lake, an early night. You drive through Fox Glacier village on the way up today; tomorrow you come back to it for the 11:50 heli-hike.",
     acts: [
       { name: "Blue Pools walk (1 h return)", price: 0, must: true },
       { name: "Thunder Creek Falls & Fantail Falls (roadside)", price: 0 },
@@ -402,12 +402,12 @@ const DAYS = [
   },
   {
     n: 13, date: "Mon 16 Nov", title: "Helicopter onto the glacier", nightN: 13,
-    imgKey: "franzjosef2", gallery: ["franzjosef2", "franzjosef", "lakematheson", "lakemapourika", "foxglacier"],
-    drive: { from: "Lake Mapourika", to: "Franz Josef → Lake Matheson → Mapourika", km: 80, time: "1 h 35 m total" },
-    body: "The big-ticket morning: a heli-hike drops you ON Franz Josef Glacier for up to 2.5 hours among ice caves and blue crevasses — the only way onto the ice now, and the trip's grand splurge. Cheaper plan: a 25-minute scenic flight with a snow landing. Free plan: the valley walk to the terminal face. All of it is weather-dependent with a full refund if cancelled, so take the first slot of the day — and if it blows out, you now have two more mornings in glacier country to try again. Late afternoon, the Lake Matheson mirror loop for the classic reflection of Aoraki and Tasman, the free glowworm forest walk in the village after dark, then back to the same lakeside pitch at Mapourika.",
+    imgKey: "foxglacier", gallery: ["foxglacier", "lakematheson", "franzjosef2", "lakemapourika"],
+    drive: { from: "Lake Mapourika", to: "Fox Glacier → Lake Matheson → Mapourika", km: 85, time: "1 h 40 m total" },
+    body: "The big-ticket day, and it's BOOKED: the Flying Fox heli-hike with Fox Glacier Guiding, 11:50, for the two of you. The helicopter drops you high on Fox Glacier for about three hours on the ice among blue crevasses, ice caves and seracs; it's the only way onto the ice now, and the trip's grand splurge. The morning is yours: coffee on the shore at Mapourika, then 40 minutes south through Franz Josef to Fox Glacier village, at the Fox Guides office on the main road well before the 11:50 flight (check the confirmation for the exact report time). It's weather-dependent, and Fox Guides will rebook or refund if the helicopter can't fly, so if it's cancelled ask to move it to 17 or 18 Nov; you're in glacier country for both mornings. Off the ice by mid-afternoon, and Lake Matheson is only 6 km from the guide office: walk the mirror loop at golden hour for the classic reflection of Aoraki and Tasman. Then back north, the free glowworm forest walk in Franz Josef after dark, and the same lakeside pitch at Mapourika.",
     acts: [
-      { name: "Franz Josef heli-hike (4 h, 2.5 h on ice)", price: 450, must: true, url: "https://www.franzjosefglacier.com/choose-your-experience/glacier-heli-hike/",
-        alts: [{ name: "Scenic heli + snow landing, 25 min", price: 193, url: "https://www.helicopter.co.nz/franz-josef" }, { name: "Fox Glacier ‘Flying Fox’ heli-hike (3 h ice)", price: 398, url: "https://www.foxguides.co.nz/experiences/flying-fox-heli-hike/" }, { name: "Glacier valley walk", price: 0 }] },
+      { name: "Fox Glacier ‘Flying Fox’ heli-hike, 11:50 (BOOKED, ~3 h on the ice)", price: 425, url: "https://www.foxguides.co.nz/experiences/flying-fox-heli-hike/",
+        alts: [{ name: "Franz Josef heli-hike (4 h, 2.5 h on ice)", price: 450, url: "https://www.franzjosefglacier.com/choose-your-experience/glacier-heli-hike/" }, { name: "Scenic heli + snow landing, 25 min", price: 193, url: "https://www.helicopter.co.nz/franz-josef" }, { name: "Glacier valley walk", price: 0 }] },
       { name: "Lake Matheson mirror loop (1.5 h, golden hour)", price: 0, must: true },
       { name: "Glowworm forest walk, Franz Josef (after dark)", price: 0 },
     ],
@@ -418,7 +418,7 @@ const DAYS = [
     drive: { from: "Lake Mapourika", to: "Ōkārito → Franz Josef Lake House", km: 60, time: "1 h 0 m total" },
     body: "The day the plan used to spend driving. If yesterday's flight was cancelled, this morning is the retry, and tomorrow morning is a third chance. Otherwise, start with coffee on the shore at Mapourika while the lake is still a mirror, then go 25 minutes north to Ōkārito: paddle the lagoon, New Zealand's largest unmodified coastal wetland, among white herons, then climb the Ōkārito Trig track for the view straight down the coast to Aoraki and the Southern Alps. Back through Franz Josef in the afternoon to the Lake House: sauna with the window on the glacier, a cold swim in the lake, an outdoor shower, and a long sunset over Croz Glacier and Fritz Falls without moving the van once.",
     acts: [
-      { name: "Heli-hike retry (only if 16 Nov was cancelled)", price: null },
+      { name: "Heli-hike retry at Fox Glacier (only if 16 Nov was cancelled)", price: null },
       { name: "Ōkārito Lagoon kayak (guided or self-guided hire)", price: null, url: "https://www.okarito.co.nz/", note: "rates on the operator's site; the 2-hour self-guided hire is the easy version" },
       { name: "Ōkārito Trig walk (1.5 h return)", price: 0 },
       { name: "Lake House: barrel sauna, lake swim, sunset", price: 0, must: true },
@@ -428,7 +428,7 @@ const DAYS = [
     n: 15, date: "Wed 18 Nov", title: "Hokitika Gorge → the wild coast", nightN: 15,
     imgKey: "hokitikagorge", gallery: ["hokitikagorge", "hokitika", "punakaiki", "punakaiki2", "westcoast"],
     drive: { from: "Franz Josef", to: "Punakaiki", km: 290, time: "4 h 10 m + stops" },
-    body: "If the flight still hasn't happened, this morning is the last shot. Otherwise: north through the rainforest to Hokitika — driftwood-sign beach, greenstone carvers, arguably the best pies on the coast — with an inland detour to Hokitika Gorge, where the water is a turquoise that looks colour-graded (free, 45-minute loop, two swing bridges). Then the coast road north of Greymouth with the Tasman on your left and rainforest cliffs on your right. Time your arrival at Punakaiki for high tide, when the Pancake Rocks blowholes detonate. Paddle the limestone gorge of the Pororari if there's light left — there will be. Camp in the dunes, surf all night.",
+    body: "If the flight still hasn't happened, this morning is the last shot (Fox is 25 km south, the wrong way, so it means a later start north). Otherwise: north through the rainforest to Hokitika — driftwood-sign beach, greenstone carvers, arguably the best pies on the coast — with an inland detour to Hokitika Gorge, where the water is a turquoise that looks colour-graded (free, 45-minute loop, two swing bridges). Then the coast road north of Greymouth with the Tasman on your left and rainforest cliffs on your right. Time your arrival at Punakaiki for high tide, when the Pancake Rocks blowholes detonate. Paddle the limestone gorge of the Pororari if there's light left — there will be. Camp in the dunes, surf all night.",
     acts: [
       { name: "Hokitika Gorge walk & swing bridges", price: 0, must: true },
       { name: "Hokitika beach sign & greenstone galleries", price: 0 },
@@ -508,7 +508,7 @@ const POIS = [
   { name: "Milford Sound / Piopiotahi", coords: [-44.6717, 167.9256], kind: "day 8", note: "Cruise €76–88 · kayak €170" },
   { name: "Roy's Peak trailhead", coords: [-44.6920, 169.0500], kind: "day 11", note: "16 km · 1,300 m up · reopens 11 Nov after lambing" },
   { name: "Blue Pools, Haast Pass", coords: [-44.1580, 169.2950], kind: "day 12", note: "Free, 1 h return" },
-  { name: "Franz Josef Glacier heli-hike", coords: [-43.4670, 170.1880], kind: "day 13", note: "€450 pp (snow-landing flight €193) · retry mornings 17 & 18 Nov" },
+  { name: "Fox Glacier heli-hike (BOOKED)", coords: [-43.4645, 170.0175], kind: "day 13", note: "Flying Fox, 16 Nov 11:50 · €425 pp · retry mornings 17 & 18 Nov if the weather cancels it" },
   { name: "Ōkārito Lagoon", coords: [-43.2230, 170.1630], kind: "day 14", note: "Kayak among white herons · Trig walk view to Aoraki" },
   { name: "Hokitika Gorge", coords: [-42.9469, 171.0210], kind: "day 15", note: "Turquoise water, swing bridges — free" },
   { name: "Pancake Rocks, Punakaiki", coords: [-42.1140, 171.3260], kind: "day 15", note: "Blowholes at high tide — free" },
@@ -565,8 +565,8 @@ const CAMP_RULES = {
 
 /* ---------- budget (€ per person) ---------- */
 const BUDGET = {
-  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). These are ACTUAL BOOKED prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026), the Novotel landing night, Manakau PurePod in Kaikōura, Stoneridge Estate in Queenstown (€565.64, booked 4 Oct 2026, +€183 pp over the €200 estimate), The Observatory Hotel in Christchurch (€324, booked 6 Oct 2026, +€75 pp over the €175 estimate), Limetree Lodge in Wanaka (€227, booked 7 Oct 2026, +€46 pp over the €136 estimate) and the Franz Josef Lake House on Airbnb (€593.02 for 17–18 Nov, booked 7 Oct 2026, +€209 pp over the €175 tree-hut estimate; Otto's became two nights and the Hanmer camp night was dropped, –€8 pp; +70 km for the Ōkārito day). Bunker House, Lake Tekapo (5–7 Nov, booked 30 Sep 2026) is a gift from Anthony and is left out of this overview. On 4 Oct 2026 the Te Anau night became a camp night (Te Anau TOP 10) and the Franz Josef tree hut moved to 16 Nov, swapping with the Lake Mapourika camp, for an even camp/lodge rhythm after Queenstown: –€56 pp. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
-  total: 6130, trimmed: 5815, heliUpgrade: 257,
+  note: "Lodge prices are live Booking.com checks; camp fees and activity prices come from the operators' own 2026 published rates (researched June 2026, re-verified July, re-confirmed against the November dates on 3 Aug 2026). These are ACTUAL BOOKED prices, not estimates: the China Southern flights (€2,323 for two), the Mighty Double Up campervan (NZ$7,698.84 ≈ €3,849 for two, booked 2 Sep 2026), the Novotel landing night, Manakau PurePod in Kaikōura, Stoneridge Estate in Queenstown (€565.64, booked 4 Oct 2026, +€183 pp over the €200 estimate), The Observatory Hotel in Christchurch (€324, booked 6 Oct 2026, +€75 pp over the €175 estimate), Limetree Lodge in Wanaka (€227, booked 7 Oct 2026, +€46 pp over the €136 estimate) and the Franz Josef Lake House on Airbnb (€593.02 for 17–18 Nov, booked 7 Oct 2026, +€209 pp over the €175 tree-hut estimate; Otto's became two nights and the Hanmer camp night was dropped, –€8 pp; +70 km for the Ōkārito day), and the Fox Glacier Flying Fox heli-hike (NZ$1,698 for two ≈ €425 pp, booked 11 Oct 2026 for 16 Nov 11:50; it replaces the €193 snow-landing flight the activities line used to carry, +€232 pp). Bunker House, Lake Tekapo (5–7 Nov, booked 30 Sep 2026) is a gift from Anthony and is left out of this overview. On 4 Oct 2026 the Te Anau night became a camp night (Te Anau TOP 10) and the Franz Josef tree hut moved to 16 Nov, swapping with the Lake Mapourika camp, for an even camp/lodge rhythm after Queenstown: –€56 pp. 1 NZD ≈ €0.50. This is the full premium programme — the panel shows how to trim what's left.",
+  total: 6362, trimmed: 6252,
   rows: [
     { cat: "Flights AMS ⇄ Christchurch return (China Southern, BOOKED)", pp: 1162 },
     { cat: "Train Gent → Schiphol, 2 Nov (BOOKED)", pp: 38 },
@@ -576,11 +576,10 @@ const BUDGET = {
     { cat: "Lodge nights × 6 (BOOKED: Novotel €141 pp, Stoneridge Estate €283 pp, Manakau PurePod €243 pp, The Observatory €162 pp, Limetree Lodge €114 pp, Franz Josef Lake House €297 pp · all lodges booked · Bunker House ×2 is a gift, not counted)", pp: 1238 },
     { cat: "Fuel · 2,840 km incl. side trips · 7.5 m 4-berth diesel ≈ 13 L/100 km", pp: 189, defaultOff: true },
     { cat: "Food & drink (the van cooks half the nights, 18 days now)", pp: 670, defaultOff: true },
-    { cat: "Activities — dark sky, Milford, heli, whales…", pp: 570 },
+    { cat: "Activities — dark sky, Milford, whales… plus the Fox Glacier heli-hike (BOOKED, €425 pp)", pp: 802 },
     { cat: "Travel insurance & misc", pp: 185, defaultOff: true },
   ],
   saveTips: [
-    "Scenic snow-landing flight → free glacier valley walk: –€193 pp.",
     "Dark Sky Summit tour → the free sky over your Pukaki camp on new-moon eve: –€110 pp.",
   ],
 };
@@ -604,7 +603,8 @@ const CHECKLIST = [
   { when: "Within days", what: "Te Anau TOP 10 powered site (10 Nov)", why: "The Milford base night, now camped. November is before the summer peak, but Te Anau fills with Milford traffic, so book a powered site rather than turn up", price: "≈ €38 for two", link: "https://top10.co.nz/park/southland/te-anau-top-10-holiday-park/" },
   { when: "Aug–Sep", what: "Dark Sky Project Summit Experience, Mt John (6 Nov)", why: "The whole loop was reversed to put this three days before the 9 Nov new moon. NZ$219 is published only to 30 Sep 2026 — reconfirm the November rate when you book", price: "≈ €110 pp", link: "https://www.darkskyproject.co.nz/experiences/the-summit-experience/" },
   { when: "Aug–Sep", what: "Milford cruise or kayak (11 Nov)", why: "Mid-morning small boats go first", price: "€76–170 pp", link: null },
-  { when: "Sep", what: "Franz heli-hike (16 Nov, first slot) + Whale Watch (20 Nov, 7:15 sailing)", why: "Both weather-dependent. The heli-hike has two retry mornings (17 and 18 Nov) now that you stay in glacier country until the 18th. The whales have no spare day any more, but the 10:00 and 12:45 sailings the same morning are the fallback", price: "€193–450 / €88 pp", link: "https://whalewatch.co.nz/" },
+  { when: "DONE ✓", what: "Fox Glacier ‘Flying Fox’ heli-hike, Mon 16 Nov 11:50", why: "Booked with Fox Glacier Guiding for two, about three hours on the ice. Weather-dependent: if the helicopter can't fly, ask Fox Guides to move it to 17 or 18 Nov, both still in glacier country", price: "NZ$1,698 for two ≈ €425 pp", link: "https://www.foxguides.co.nz/experiences/flying-fox-heli-hike/" },
+  { when: "Sep", what: "Whale Watch (20 Nov, 7:15 sailing)", why: "Weather-dependent and there's no spare day any more, but the 10:00 and 12:45 sailings the same morning are the fallback", price: "€88 pp", link: "https://whalewatch.co.nz/" },
   { when: "On the ground", what: "Hanmer pools, Tekapo Springs, gondola, Glacier Explorers, punting", why: "Walk-up or day-before online is fine in November — you're ahead of the December peak and outside school holidays", price: "€10–104", link: null },
 ];
 

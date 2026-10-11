@@ -382,8 +382,7 @@ const DOC_PORTAL = "https://bookings.doc.govt.nz/";
       <div class="budget-total">
         <div class="t-label" id="bTotalLabel">all-in, per person</div>
         <div class="t-value"><span id="bTotal"></span><small> /pp</small></div>
-        <div class="t-note"><span id="bTotalNote"></span> · <span id="bTwo"></span> for two ·
-          heli-hike upgrade +€${BUDGET.heliUpgrade} pp</div>
+        <div class="t-note"><span id="bTotalNote"></span> · <span id="bTwo"></span> for two</div>
       </div>
       <div class="save-tips">
         <h4 id="bTrim"></h4>
