@@ -195,8 +195,8 @@ const NIGHTS = [
     n: 12, date: "Sun 15 Nov", place: "Lake Mapourika", region: "Westland Tai Poutini NP",
     coords: [-43.3128, 170.2020], type: "camp",
     checkin: "2026-11-15", checkout: "2026-11-16", searchTown: "Franz Josef",
-    stay: { name: "Otto's / MacDonalds DOC campsite", price: 18, imgKey: "camp_mapourika", doc: true,
-            note: "DOC site on the bush edge of mirror-still Lake Mapourika, 10 minutes past Franz Josef village, so tomorrow's first heli slot is a short drive away. Two nights here (15–16 Nov): pitch once, wake on the lake twice. Booking mandatory and open now. Dawn here is absurd.",
+    stay: { name: "Otto's / MacDonalds DOC campsite (BOOKED · night 1 of 2)", price: 18, imgKey: "camp_mapourika", doc: true,
+            note: "DOC site on the bush edge of mirror-still Lake Mapourika, 10 minutes past Franz Josef village, so tomorrow's first heli slot is a short drive away. BOOKED on the DOC portal for both nights (15–17 Nov): Otto's Corner, site 69, an unpowered large-vehicle pitch, NZ$72 for two. Check-in from 14:00, check-out by 10:00 on 17 Nov. Pitch once, wake on the lake twice. Dawn here is absurd.",
             url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/westland-tai-poutini-national-park/things-to-do/campsites/otto-macdonalds-campsite/" },
     alts: [
       { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
@@ -206,8 +206,8 @@ const NIGHTS = [
     n: 13, date: "Mon 16 Nov", place: "Lake Mapourika", region: "Westland Tai Poutini NP",
     coords: [-43.3128, 170.2020], type: "camp",
     checkin: "2026-11-16", checkout: "2026-11-17", searchTown: "Franz Josef",
-    stay: { name: "Otto's / MacDonalds DOC campsite (night 2 of 2)", price: 18, imgKey: "camp_mapourika", doc: true,
-            note: "Same pitch, second night, so after the heli day there's nothing to set up. Book both nights in one go on the DOC portal.",
+    stay: { name: "Otto's / MacDonalds DOC campsite (BOOKED · night 2 of 2)", price: 18, imgKey: "camp_mapourika", doc: true,
+            note: "Same pitch (site 69), second night, so after the heli day there's nothing to set up. Out by 10:00 tomorrow; the Lake House is only minutes away.",
             url: "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/westland-tai-poutini-national-park/things-to-do/campsites/otto-macdonalds-campsite/" },
     alts: [
       { name: "Franz Josef TOP 10 Holiday Park", kind: "camp", price: 38, note: "powered site + hot showers in the village, a walk from the heli base", url: "https://top10.co.nz/park/west-coast/franz-josef-top-10-holiday-park/powered-site/" },
@@ -558,7 +558,7 @@ const CAMP_RULES = {
   apps: [
     { name: "CamperMate", url: "https://www.campermate.com/", note: "The essential app — every legal site, toilet & dump station, live" },
     { name: "Rankers Camping NZ", url: "https://camping.rankers.co.nz/", note: "Community reviews of every spot" },
-    { name: "DOC campsite bookings", url: "https://bookings.doc.govt.nz/", note: "White Horse Hill, Cascade Creek & Moke Lake BOOKED — Otto's (15–16 Nov) still to book" },
+    { name: "DOC campsite bookings", url: "https://bookings.doc.govt.nz/", note: "All four DOC sites on the route are BOOKED: White Horse Hill, Cascade Creek, Moke Lake & Otto's" },
   ],
   fine: "Fines: NZ$400 standard, up to NZ$1,000 for waste dumping — and the spots get checked.",
 };
@@ -598,8 +598,7 @@ const CHECKLIST = [
   { when: "DONE ✓", what: "Limetree Lodge, Wanaka (13–14 Nov)", why: "Booked on Booking.com on 7 Oct 2026, replacing Black Diamond Retreat. Luxury B&B on a 10-acre estate five minutes from town, with a heated pool, spa pool and breakfast, the night before Roy's Peak", price: "€227 for two", link: "https://www.booking.com/hotel/nz/limetree-lodge.html" },
   { when: "DONE ✓", what: "Franz Josef Lake House (17–18 Nov)", why: "Booked on Airbnb on 7 Oct 2026, replacing the Rainforest Retreat tree hut and moving the Franz Josef lodge night from 16 to 17 Nov. Off-grid house on a private lake 3 minutes from the glacier, with a barrel sauna. Check van access with the host", price: "€593.02 for two", link: "https://www.airbnb.com/rooms/1263907835806140596" },
   { when: "DONE ✓", what: "Stoneridge Estate, Queenstown (9–10 Nov)", why: "Booked on Booking.com on 4 Oct 2026, replacing Moonlight Escape. Vineyard lodge at Lake Hayes, 15 minutes from town on the Cromwell side, with a hot tub and breakfast included", price: "€565.64 for two", link: "https://stoneridge.co.nz/accommodation/the-lodge/" },
-  { when: "DONE ✓", what: "DOC campsites: White Horse Hill (7 Nov) · Cascade Creek (11 Nov) · Moke Lake (12 Nov)", why: "Booked on the DOC portal, unpowered sites for two. Check-in from 14:00 at all three; check-out 12:00 at White Horse Hill, 10:00 at Cascade Creek and Moke Lake", price: "NZ$112 ≈ €56 for two", link: "https://bookings.doc.govt.nz/" },
-  { when: "Book NOW", what: "Otto's / MacDonalds DOC campsite (15–16 Nov, 2 nights)", why: "The last DOC site still open on the list. Only ~20 sites, the only lakeside DOC site near Franz, booking-only with no walk-ups, and you arrive late after the Haast drive", price: "€18 /night for two", link: "https://bookings.doc.govt.nz/" },
+  { when: "DONE ✓", what: "DOC campsites: White Horse Hill (7 Nov) · Cascade Creek (11 Nov) · Moke Lake (12 Nov) · Otto's (15–16 Nov, 2 nights)", why: "Booked on the DOC portal, unpowered sites for two (Otto's Corner site 69 at Lake Mapourika). Check-in from 14:00 everywhere; check-out 12:00 at White Horse Hill, 10:00 at the others", price: "NZ$184 ≈ €92 for two", link: "https://bookings.doc.govt.nz/" },
   { when: "Sep", what: "Mighty online check-in + an International Driving Permit for each driver", why: "The booking's expected-arrival field says ~11:00 — set it to 08:00 so the van is prepped for when you actually arrive, and add the second driver. Mighty's terms need a licence in English or with an accredited English translation and accept an IDP as that translation; Belgian licences aren't in English, so order one each from your municipality (a few days) and carry it with the licence", price: "IDP ≈ €20 each", link: "https://www.mightycampers.com/nz/en" },
   { when: "Book NOW", what: "Onsen Hot Pools private tub, Queenstown (9 Nov evening)", why: "Confirmed: availability is already released through 31 Dec 2026, and the sunset tubs go first. Nothing is stopping you booking this today", price: "€88 /tub for two", link: "https://www.onsen.co.nz/experiences/original-onsen-soak-only/" },
   { when: "Within days", what: "Te Anau TOP 10 powered site (10 Nov)", why: "The Milford base night, now camped. November is before the summer peak, but Te Anau fills with Milford traffic, so book a powered site rather than turn up", price: "≈ €38 for two", link: "https://top10.co.nz/park/southland/te-anau-top-10-holiday-park/" },
